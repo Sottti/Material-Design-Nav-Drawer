@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/divider_height"
+    android:layout_marginBottom="@dimen/nav_drawer_vertical_spacing_listing_divider_bottom"
+    android:layout_marginTop="@dimen/nav_drawer_vertical_spacing_listing_divider_top"
+    android:background="@color/text_black_divider_12"/>

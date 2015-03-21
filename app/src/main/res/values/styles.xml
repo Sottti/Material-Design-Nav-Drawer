@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Material Design Navigation Drawer -->
+    <style name="NavDrawerRowLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/nav_drawer_item_row_height</item>
+        <item name="android:background">@drawable/nav_drawer_row_item_background</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="NavDrawerRowLayout.Main">
+        <item name="android:tag">@string/tag_nav_drawer_main_entry</item>
+    </style>
+
+    <style name="NavDrawerRowLayout.Secondary">
+        <item name="android:tag">@string/tag_nav_drawer_special_entry</item>
+    </style>
+
+    <style name="NavDrawerRowItemIcon">
+        <item name="android:layout_width">@dimen/nav_drawer_item_row_icon_size</item>
+        <item name="android:layout_height">@dimen/nav_drawer_item_row_icon_size</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/nav_drawer_vertical_keyline_icon_left</item>
+    </style>
+
+    <style name="NavDrawerRowItemIcon.Normal">
+        <item name="android:tint">@color/nav_drawer_item_icon_normal</item>
+    </style>
+
+    <style name="NavDrawerRowItemIcon.Selected">
+        <item name="android:tint">@color/nav_drawer_item_icon_selected</item>
+    </style>
+
+    <style name="NavDrawerRowItemText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/nav_drawer_item_main_text</item>
+        <item name="android:layout_gravity">start|center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/nav_drawer_vertical_keyline_text_left</item>
+    </style>
+
+    <style name="NavDrawerSectionSubheaderText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/nav_drawer_subheader_height</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/nav_drawer_section_subheader</item>
+        <item name="android:layout_gravity">start|center_vertical</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/nav_drawer_vertical_keyline_icon_left</item>
+    </style>
+
+    <style name="NavDrawerAccountInfoText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

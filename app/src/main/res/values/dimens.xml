@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Navigation Drawer -->
+    <dimen name="navigation_drawer_max_width">320dp</dimen>
+
+    <dimen name="navigation_drawer_profile_image_size">64dp</dimen>
+    <dimen name="navigation_drawer_item_height">48dp</dimen>
+    <dimen name="navigation_drawer_account_section_default_height">164dp</dimen>
+    <dimen name="navigation_drawer_account_information_height">56dp</dimen>
+    <dimen name="nav_drawer_vertical_keyline_icon_left">16dp</dimen>
+    <dimen name="nav_drawer_vertical_keyline_text_left">72dp</dimen>
+    <dimen name="nav_drawer_vertical_keyline_right">16dp</dimen>
+    <dimen name="nav_drawer_item_row_height">48dp</dimen>
+    <dimen name="nav_drawer_item_row_icon_size">24dp</dimen>
+    <dimen name="nav_drawer_vertical_spacing_listing">8dp</dimen>
+    <dimen name="nav_drawer_vertical_spacing_listing_divider_top">7dp</dimen>
+    <dimen name="nav_drawer_vertical_spacing_listing_divider_bottom">8dp</dimen>
+    <dimen name="nav_drawer_subheader_height">48dp</dimen>
+
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+
+</resources>

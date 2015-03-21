@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_selected="true">
+        <ripple
+            android:color="@color/nav_drawer_row_item_pressed">
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/nav_drawer_row_item_selected"/>
+                </shape>
+            </item>
+
+        </ripple>
+    </item>
+
+    <item>
+        <ripple android:color="@color/nav_drawer_row_item_pressed" />
+    </item>
+
+</selector>
