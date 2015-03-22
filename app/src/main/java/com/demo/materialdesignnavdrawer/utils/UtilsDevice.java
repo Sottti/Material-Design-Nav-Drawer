@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 /**
  * This utility class is for device related stuff.
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class UtilsDevice
 {

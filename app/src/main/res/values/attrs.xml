@@ -7,4 +7,9 @@
         <attr name="insetForeground" format="reference|color" />
     </declare-styleable>
 
+    <!-- ColorState to be used in the TinOnImageView view -->
+    <declare-styleable name="TintOnStateImageView">
+        <attr name="colorStateList" format="reference|color" />
+    </declare-styleable>
+
 </resources>

@@ -11,7 +11,7 @@ import com.demo.materialdesignnavdrawer.factories.FactoryTypeface;
  *
  * Uses a factory to create the typefaces that are not created yet and store them as soon as they are created.
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class ManagerTypeface
 {

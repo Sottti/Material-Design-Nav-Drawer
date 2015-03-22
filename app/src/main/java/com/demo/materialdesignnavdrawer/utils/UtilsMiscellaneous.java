@@ -6,7 +6,7 @@ import android.content.res.TypedArray;
 /**
  * Utility class
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class UtilsMiscellaneous
 {

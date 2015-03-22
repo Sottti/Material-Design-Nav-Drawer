@@ -12,7 +12,7 @@ import com.demo.materialdesignnavdrawer.R;
 /**
  * Fragment showing a solid background color
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class ColorFragment extends Fragment
 {

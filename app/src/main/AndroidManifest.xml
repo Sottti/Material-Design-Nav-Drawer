@@ -10,7 +10,7 @@
         android:theme="@style/BaseTheme.MainTheme" >
 
         <activity
-            android:name=".main.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/BaseTheme.MainTheme.WithNavDrawer">
             <intent-filter>
@@ -22,7 +22,7 @@
 
         <activity android:name=".activities.OtherActivity"
             android:label="@string/other_activity"
-            android:parentActivityName=".main.MainActivity">
+            android:parentActivityName=".activities.MainActivity">
         </activity>
     </application>
 

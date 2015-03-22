@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Needs to have clickable to true to make the layout clickable http://goo.gl/t9fokh-->
-<com.demo.materialdesignnavdrawer.ScrimInsetsFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.demo.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_navigation_drawer_rootLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    android:background="@color/navigation_drawer_background"
-    android:clickable="true"
-    android:fitsSystemWindows="true"
-    app:insetForeground="@color/nav_drawer_inset_foreground"
+    style="@style/ScrimInsetsLayout"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -90,9 +81,10 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/nav_drawer_vertical_spacing_listing"
-            android:layout_marginBottom="@dimen/nav_drawer_vertical_spacing_listing"
-            android:clipToPadding="false">
+            android:background="@color/navigation_drawer_background"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/nav_drawer_vertical_spacing_listing"
+            android:paddingTop="@dimen/nav_drawer_vertical_spacing_listing">
 
             <LinearLayout
                 android:id="@+id/navigation_drawer_linearLayout_entries_root_view"
@@ -104,9 +96,9 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_home"
                     style="@style/NavDrawerRowLayout.Main">
 
-                    <ImageView
+                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_home"
-                        style="@style/NavDrawerRowItemIcon.Selected"
+                        style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_home_white_24dp"
                         tools:ignore="ContentDescription"
                         tools:tint="@color/nav_drawer_item_icon_selected" />
@@ -124,9 +116,9 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_explore"
                     style="@style/NavDrawerRowLayout.Main" >
 
-                    <ImageView
+                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_explore"
-                        style="@style/NavDrawerRowItemIcon.Normal"
+                        style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_explore_white_24dp"
                         tools:ignore="ContentDescription" />
 
@@ -145,9 +137,9 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_help_and_feedback"
                     style="@style/NavDrawerRowLayout.Secondary">
 
-                    <ImageView
+                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_help_and_feedback"
-                        style="@style/NavDrawerRowItemIcon.Normal"
+                        style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_help_white_24dp"
                         tools:ignore="ContentDescription" />
 
@@ -163,9 +155,9 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_about"
                     style="@style/NavDrawerRowLayout.Secondary">
 
-                    <ImageView
+                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_about"
-                        style="@style/NavDrawerRowItemIcon.Normal"
+                        style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_info_white_24dp"
                         tools:ignore="ContentDescription" />
 
@@ -183,4 +175,4 @@
 
     </LinearLayout>
 
-</com.demo.materialdesignnavdrawer.ScrimInsetsFrameLayout>
+</com.demo.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout>

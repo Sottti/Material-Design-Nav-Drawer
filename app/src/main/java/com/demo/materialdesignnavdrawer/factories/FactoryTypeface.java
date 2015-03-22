@@ -6,7 +6,7 @@ import android.graphics.Typeface;
 /**
  * Typeface creation.
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class FactoryTypeface
 {

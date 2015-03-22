@@ -1,5 +1,15 @@
 <resources>
 
+    <!-- ScrimInsetLayout -->
+    <style name="ScrimInsetsLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="insetForeground">@color/nav_drawer_inset_foreground</item>
+    </style>
+
+
     <!-- Material Design Navigation Drawer -->
     <style name="NavDrawerRowLayout">
         <item name="android:layout_width">match_parent</item>
@@ -23,14 +33,7 @@
         <item name="android:layout_height">@dimen/nav_drawer_item_row_icon_size</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_marginLeft">@dimen/nav_drawer_vertical_keyline_icon_left</item>
-    </style>
-
-    <style name="NavDrawerRowItemIcon.Normal">
-        <item name="android:tint">@color/nav_drawer_item_icon_normal</item>
-    </style>
-
-    <style name="NavDrawerRowItemIcon.Selected">
-        <item name="android:tint">@color/nav_drawer_item_icon_selected</item>
+        <item name="colorStateList">@color/nav_drawer_row_icon</item>
     </style>
 
     <style name="NavDrawerRowItemText">

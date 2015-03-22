@@ -9,7 +9,7 @@ import com.demo.materialdesignnavdrawer.R;
 /**
  * Represents other activity different from the main activity
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class OtherActivity extends ActionBarActivity
 {

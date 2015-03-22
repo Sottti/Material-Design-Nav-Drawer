@@ -1,7 +1,6 @@
-package com.demo.materialdesignnavdrawer.main;
+package com.demo.materialdesignnavdrawer.activities;
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -10,13 +9,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.demo.materialdesignnavdrawer.R;
-import com.demo.materialdesignnavdrawer.ScrimInsetsFrameLayout;
-import com.demo.materialdesignnavdrawer.activities.OtherActivity;
+import com.demo.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout;
 import com.demo.materialdesignnavdrawer.fragments.ColorFragment;
 import com.demo.materialdesignnavdrawer.managers.ManagerTypeface;
 import com.demo.materialdesignnavdrawer.utils.UtilsDevice;
@@ -25,7 +22,7 @@ import com.demo.materialdesignnavdrawer.utils.UtilsMiscellaneous;
 /**
  * Main class hosting the navigation drawer
  *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/posts
+ * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class MainActivity extends ActionBarActivity implements View.OnClickListener
 {
@@ -86,7 +83,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         // Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_activity_DrawerLayout);
-        mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.green_700));
+        mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.primaryDark));
         mScrimInsetsFrameLayout = (ScrimInsetsFrameLayout) findViewById(R.id.main_activity_navigation_drawer_rootLayout);
 
         mActionBarDrawerToggle = new ActionBarDrawerToggle
@@ -165,6 +162,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     {
                         getSupportActionBar().setTitle(getString(R.string.toolbar_title_home));
 
+                        view.setSelected(true);
+
                         Bundle bundle = new Bundle();
                         bundle.putInt(ColorFragment.sARGUMENT_COLOR, R.color.blue_500);
 
@@ -179,6 +178,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     case R.id.navigation_drawer_items_list_linearLayout_explore:
                     {
                         getSupportActionBar().setTitle(getString(R.string.toolbar_title_explore));
+
+                        view.setSelected(true);
 
                         Bundle bundle = new Bundle();
                         bundle.putInt(ColorFragment.sARGUMENT_COLOR, R.color.amber_500);
@@ -230,22 +231,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
                 if (currentViewIsMainEntry)
                 {
-                    FrameLayout currentRow = (FrameLayout) currentView;
-                    ImageView icon = (ImageView) currentRow.getChildAt(0);
-
                     if (currentView == pressedRow)
                     {
                         currentView.setSelected(true);
-
-                        icon.setColorFilter(getResources()
-                                .getColor(R.color.nav_drawer_item_icon_selected), PorterDuff.Mode.SRC_IN);
                     }
                     else
                     {
                         currentView.setSelected(false);
-
-                        icon.setColorFilter(getResources()
-                                .getColor(R.color.nav_drawer_item_icon_normal), PorterDuff.Mode.SRC_IN);
                     }
                 }
             }
