@@ -6,7 +6,6 @@ This is an example application that shows what I´ve written in some blog entrie
 2. [Navigation Drawer Styling](http://goo.gl/rTS3MF)
 3. Navigation Drawer Navigation (soon)
 
-
-![Screenshot](https://lh4.googleusercontent.com/TVBMHXAxZBd3UD748bYkp7kyAsoULuHMTJ6pbel9kgwjVYxMmSPVaxrkCLEPGHIW3z39YOYJbt-r4Dw=w1896-h875)
+![Screenshot](https://dl.dropboxusercontent.com/u/83259317/Images/Nav%20Drawer.png)
 
 
