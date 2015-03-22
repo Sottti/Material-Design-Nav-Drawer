@@ -2,7 +2,7 @@
 
 This is an example application that shows what I´ve written in some blog entries about how to implement a Navigation Drawer following the Material Design guidelines.
 
-![Screenshot](https://lh6.googleusercontent.com/BacAHPhR0buqcCrnz2lA-YMo8BQGvjD8kP3ORs3IPq7FrCHqzOAA5lFAictsjtegCrceHYkFgqockRI=w1896-h875)
+![Screenshot](https://lh4.googleusercontent.com/TVBMHXAxZBd3UD748bYkp7kyAsoULuHMTJ6pbel9kgwjVYxMmSPVaxrkCLEPGHIW3z39YOYJbt-r4Dw=w1896-h875)
 
 Links to Nav Drawer posts:
 
