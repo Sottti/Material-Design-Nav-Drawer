@@ -3,8 +3,8 @@ package com.demo.materialdesignnavdrawer.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
@@ -24,7 +24,7 @@ import com.demo.materialdesignnavdrawer.utils.UtilsMiscellaneous;
  *
  * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
-public class MainActivity extends ActionBarActivity implements View.OnClickListener
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
     private final static double sNAVIGATION_DRAWER_ACCOUNT_SECTION_ASPECT_RATIO = 9d/16d;
 
@@ -104,9 +104,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         };
 
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+
         mActionBarDrawerToggle.syncState();
 
         // Navigation Drawer layout width
@@ -160,7 +165,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 {
                     case R.id.navigation_drawer_items_list_linearLayout_home:
                     {
-                        getSupportActionBar().setTitle(getString(R.string.toolbar_title_home));
+                        if (getSupportActionBar() != null)
+                        {
+                            getSupportActionBar().setTitle(getString(R.string.toolbar_title_home));
+                        }
+
 
                         view.setSelected(true);
 
@@ -177,7 +186,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
                     case R.id.navigation_drawer_items_list_linearLayout_explore:
                     {
-                        getSupportActionBar().setTitle(getString(R.string.toolbar_title_explore));
+                        if (getSupportActionBar() != null)
+                        {
+                            getSupportActionBar().setTitle(getString(R.string.toolbar_title_explore));
+                        }
 
                         view.setSelected(true);
 

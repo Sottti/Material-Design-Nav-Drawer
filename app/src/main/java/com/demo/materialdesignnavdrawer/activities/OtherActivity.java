@@ -1,7 +1,7 @@
 package com.demo.materialdesignnavdrawer.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.demo.materialdesignnavdrawer.R;
@@ -11,7 +11,7 @@ import com.demo.materialdesignnavdrawer.R;
  *
  * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
-public class OtherActivity extends ActionBarActivity
+public class OtherActivity extends AppCompatActivity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -29,6 +29,11 @@ public class OtherActivity extends ActionBarActivity
     {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
     }
 }
