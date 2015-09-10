@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer.activities;
+package com.sottocorp.materialdesignnavdrawer.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.demo.materialdesignnavdrawer.R;
-import com.demo.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout;
-import com.demo.materialdesignnavdrawer.fragments.ColorFragment;
-import com.demo.materialdesignnavdrawer.managers.ManagerTypeface;
-import com.demo.materialdesignnavdrawer.utils.UtilsDevice;
-import com.demo.materialdesignnavdrawer.utils.UtilsMiscellaneous;
+import com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout;
+import com.sottocorp.materialdesignnavdrawer.fragments.ColorFragment;
+import com.sottocorp.materialdesignnavdrawer.managers.ManagerTypeface;
+import com.sottocorp.materialdesignnavdrawer.utils.UtilsDevice;
+import com.sottocorp.materialdesignnavdrawer.utils.UtilsMiscellaneous;
 
 /**
  * Main class hosting the navigation drawer

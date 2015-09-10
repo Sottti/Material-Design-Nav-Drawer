@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.demo.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_navigation_drawer_rootLayout"
     style="@style/ScrimInsetsLayout"
@@ -96,7 +96,7 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_home"
                     style="@style/NavDrawerRowLayout.Main">
 
-                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_home"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_home_white_24dp"
@@ -116,7 +116,7 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_explore"
                     style="@style/NavDrawerRowLayout.Main" >
 
-                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_explore"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_explore_white_24dp"
@@ -137,7 +137,7 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_help_and_feedback"
                     style="@style/NavDrawerRowLayout.Secondary">
 
-                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_help_and_feedback"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_help_white_24dp"
@@ -155,7 +155,7 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_about"
                     style="@style/NavDrawerRowLayout.Secondary">
 
-                    <com.demo.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
                         android:id="@+id/navigation_drawer_items_list_icon_about"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_info_white_24dp"
@@ -175,4 +175,4 @@
 
     </LinearLayout>
 
-</com.demo.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout>
+</com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout>

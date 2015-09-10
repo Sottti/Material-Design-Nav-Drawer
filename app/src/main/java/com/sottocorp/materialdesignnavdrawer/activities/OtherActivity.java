@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer.activities;
+package com.sottocorp.materialdesignnavdrawer.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

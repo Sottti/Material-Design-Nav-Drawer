@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer.customViews;
+package com.sottocorp.materialdesignnavdrawer.customViews;
 
 import android.content.Context;
 import android.content.res.ColorStateList;

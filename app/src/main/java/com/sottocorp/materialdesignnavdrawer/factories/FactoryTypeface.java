@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer.factories;
+package com.sottocorp.materialdesignnavdrawer.factories;
 
 import android.content.Context;
 import android.graphics.Typeface;

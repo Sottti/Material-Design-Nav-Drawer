@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer.utils;
+package com.sottocorp.materialdesignnavdrawer.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;

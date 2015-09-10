@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer;
+package com.sottocorp.materialdesignnavdrawer;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

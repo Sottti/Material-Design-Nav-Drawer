@@ -1,4 +1,4 @@
-package com.demo.materialdesignnavdrawer.fragments;
+package com.sottocorp.materialdesignnavdrawer.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

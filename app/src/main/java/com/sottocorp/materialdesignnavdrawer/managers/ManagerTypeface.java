@@ -1,10 +1,10 @@
-package com.demo.materialdesignnavdrawer.managers;
+package com.sottocorp.materialdesignnavdrawer.managers;
 
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.SparseArray;
 
-import com.demo.materialdesignnavdrawer.factories.FactoryTypeface;
+import com.sottocorp.materialdesignnavdrawer.factories.FactoryTypeface;
 
 /**
  * This manager class is on charge for typeface caching and dispatching.
