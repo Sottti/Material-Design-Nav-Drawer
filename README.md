@@ -1,6 +1,8 @@
 # Material Design Navigation Drawer
 
-This is showcase of what you can read in the next articles about how to implement the [Navigation Drawer following the Material Design guidelines](https://goo.gl/qpKNsR).
+App sample about how to implement the [Navigation Drawer following the Material Design guidelines](https://goo.gl/qpKNsR).
+
+Check out these articles for further information.
 
 1. [Navigation Drawer Sizing](http://goo.gl/Zc3kMT)
 2. [Navigation Drawer Styling](http://goo.gl/rTS3MF)
@@ -8,6 +10,4 @@ This is showcase of what you can read in the next articles about how to implemen
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/83259317/Images/MD%20Nav%20Drawer.png)
 
-This articles were written before the [Android Design Support Library](http://goo.gl/GgLTjB) came out. Using that Google library is the way to go.
-
-
+These articles were written before the [Android Design Support Library](http://goo.gl/GgLTjB) came out. Using that Google library is the way to go.
