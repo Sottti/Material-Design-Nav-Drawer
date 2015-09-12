@@ -15,11 +15,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.sottocorp.materialdesignnavdrawer.R;
 import com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout;
-import com.sottocorp.materialdesignnavdrawer.fragments.ColorFragment;
+import com.sottocorp.materialdesignnavdrawer.fragments.ImageFragment;
 import com.sottocorp.materialdesignnavdrawer.utils.UtilsDevice;
 import com.sottocorp.materialdesignnavdrawer.utils.UtilsMiscellaneous;
 
@@ -32,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private DrawerLayout mDrawerLayout;
     private LinearLayout mNavDrawerEntriesRootView;
+    private FrameLayout mFrameLayout_AccountView, mFrameLayout_Home,
+            mFrameLayout_Explore, mFrameLayout_HelpAndFeedback, mFrameLayout_About;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,62 +52,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
-        // Icons tint list
-        final ImageView homeImageView =
-                (ImageView) findViewById(R.id.navigation_drawer_items_list_icon_home);
-        final Drawable homeDrawable = DrawableCompat.wrap(homeImageView.getDrawable());
-        DrawableCompat.setTintList
-                (
-                        homeDrawable.mutate(),
-                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
-                );
-
-        homeImageView.setImageDrawable(homeDrawable);
-
-        final ImageView exploreImageView =
-                (ImageView) findViewById(R.id.navigation_drawer_items_list_icon_explore);
-        final Drawable exploreDrawable = DrawableCompat.wrap(exploreImageView.getDrawable());
-        DrawableCompat.setTintList
-                (
-                        exploreDrawable.mutate(),
-                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
-                );
-
-        exploreImageView.setImageDrawable(exploreDrawable);
+        setUpIcons();
 
         // Layout resources
-        final FrameLayout mFrameLayout_AccountView =
+        mFrameLayout_AccountView =
                 (FrameLayout) findViewById(R.id.navigation_drawer_account_view);
 
         mNavDrawerEntriesRootView =
                 (LinearLayout)findViewById(R.id.navigation_drawer_linearLayout_entries_root_view);
 
-        final FrameLayout frameLayout_Home =
+        mFrameLayout_Home =
                 (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_home);
 
-        final FrameLayout frameLayout_Explore =
+        mFrameLayout_Explore =
                 (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_explore);
 
-        final FrameLayout frameLayout_HelpAndFeedback =
+        mFrameLayout_HelpAndFeedback =
                 (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_help_and_feedback);
 
-        final FrameLayout frameLayout_About =
+        mFrameLayout_About =
                 (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_about);
 
         // Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_activity_DrawerLayout);
-        mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.primaryDark));
+
         ScrimInsetsFrameLayout mScrimInsetsFrameLayout =
                 (ScrimInsetsFrameLayout) findViewById(R.id.main_activity_navigation_drawer_rootLayout);
 
         final ActionBarDrawerToggle mActionBarDrawerToggle = new ActionBarDrawerToggle
-                (
-                        this,
-                        mDrawerLayout,
-                        mToolbar,
-                        R.string.navigation_drawer_opened,
-                        R.string.navigation_drawer_closed
-                ) {
+        (
+                this,
+                mDrawerLayout,
+                mToolbar,
+                R.string.navigation_drawer_opened,
+                R.string.navigation_drawer_closed
+        )
+        {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset)
             {
@@ -117,13 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
-        if (getSupportActionBar() != null)
-        {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setHomeButtonEnabled(true);
-        }
-
         mActionBarDrawerToggle.syncState();
 
         // Navigation Drawer layout width
@@ -131,7 +105,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 UtilsMiscellaneous.getThemeAttributeDimensionSize(this, android.R.attr.actionBarSize);
         final int maxDrawerWidth = getResources().getDimensionPixelSize(R.dimen.navigation_drawer_max_width);
 
-        mScrimInsetsFrameLayout.getLayoutParams().width = Math.min(possibleMinDrawerWidth, maxDrawerWidth);
+        mScrimInsetsFrameLayout.getLayoutParams().width =
+                Math.min(possibleMinDrawerWidth, maxDrawerWidth);
 
         // Account section height
         mFrameLayout_AccountView.getLayoutParams().height = (int) (mScrimInsetsFrameLayout.getLayoutParams().width
@@ -139,32 +114,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Nav Drawer item click listener
         mFrameLayout_AccountView.setOnClickListener(this);
-        frameLayout_Home.setOnClickListener(this);
-        frameLayout_Explore.setOnClickListener(this);
-        frameLayout_HelpAndFeedback.setOnClickListener(this);
-        frameLayout_About.setOnClickListener(this);
+        mFrameLayout_Home.setOnClickListener(this);
+        mFrameLayout_Explore.setOnClickListener(this);
+        mFrameLayout_HelpAndFeedback.setOnClickListener(this);
+        mFrameLayout_About.setOnClickListener(this);
 
         // Set the first item as selected for the first time
-        getSupportActionBar().setTitle(R.string.toolbar_title_home);
-        frameLayout_Home.setSelected(true);
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setTitle(R.string.toolbar_title_home);
+        }
+
+        mFrameLayout_Home.setSelected(true);
 
         // Create the first fragment to be shown
         final Bundle bundle = new Bundle();
-        bundle.putInt(ColorFragment.sARGUMENT_IMAGE_CODE, 0);
+        bundle.putInt(ImageFragment.sARGUMENT_IMAGE_CODE, 0);
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.main_activity_content_frame, ColorFragment.newInstance(bundle))
+                .add(R.id.main_activity_content_frame, ImageFragment.newInstance(bundle))
                 .commit();
     }
 
     @Override
     public void onClick(View view)
     {
-        if (view.getId() == R.id.navigation_drawer_account_view)
+        if (view == mFrameLayout_AccountView)
         {
             mDrawerLayout.closeDrawer(GravityCompat.START);
-            Toast.makeText(this, "To Account/SignUp/SignIn", Toast.LENGTH_LONG).show();
+
+            // Start account/signup/signin
+            startActivity(new Intent(view.getContext(), AccountActivity.class));
         }
         else
         {
@@ -172,60 +153,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 onRowPressed((FrameLayout) view);
 
-                switch (view.getId())
+                if (view == mFrameLayout_Home)
                 {
-                    case R.id.navigation_drawer_items_list_linearLayout_home:
+                    if (getSupportActionBar() != null)
                     {
-                        if (getSupportActionBar() != null)
-                        {
-                            getSupportActionBar().setTitle(getString(R.string.toolbar_title_home));
-                        }
-
-                        view.setSelected(true);
-
-                        final Bundle bundle = new Bundle();
-                        bundle.putInt(ColorFragment.sARGUMENT_IMAGE_CODE, 0);
-
-                        // Insert the fragment by replacing any existing fragment
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.main_activity_content_frame, ColorFragment.newInstance(bundle))
-                                .commit();
-                        break;
+                        getSupportActionBar().setTitle(getString(R.string.toolbar_title_home));
                     }
 
-                    case R.id.navigation_drawer_items_list_linearLayout_explore:
+                    view.setSelected(true);
+
+                    final Bundle bundle = new Bundle();
+                    bundle.putInt(ImageFragment.sARGUMENT_IMAGE_CODE, 0);
+
+                    // Insert the fragment by replacing any existing fragment
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_activity_content_frame, ImageFragment.newInstance(bundle))
+                            .commit();
+                }
+                else if (view == mFrameLayout_Explore)
+                {
+                    if (getSupportActionBar() != null)
                     {
-                        if (getSupportActionBar() != null)
-                        {
-                            getSupportActionBar().setTitle(getString(R.string.toolbar_title_explore));
-                        }
-
-                        view.setSelected(true);
-
-                        final Bundle bundle = new Bundle();
-                        bundle.putInt(ColorFragment.sARGUMENT_IMAGE_CODE, 1);
-
-                        // Insert the fragment by replacing any existing fragment
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.main_activity_content_frame, ColorFragment.newInstance(bundle))
-                                .commit();
-                        break;
+                        getSupportActionBar().setTitle(getString(R.string.toolbar_title_explore));
                     }
 
-                    case R.id.navigation_drawer_items_list_linearLayout_help_and_feedback:
-                        // Start intent to send an email
-                        startActivity(new Intent(view.getContext(), OtherActivity.class));
-                        break;
+                    view.setSelected(true);
 
-                    case R.id.navigation_drawer_items_list_linearLayout_about:
-                        // Show about activity
-                        startActivity(new Intent(view.getContext(), OtherActivity.class));
-                        break;
+                    final Bundle bundle = new Bundle();
+                    bundle.putInt(ImageFragment.sARGUMENT_IMAGE_CODE, 1);
 
-                    default:
-                        break;
+                    // Insert the fragment by replacing any existing fragment
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_activity_content_frame, ImageFragment.newInstance(bundle))
+                            .commit();
+                }
+                else if (view == mFrameLayout_HelpAndFeedback)
+                {
+                    // Start help/feedback acitvity
+                    startActivity(new Intent(view.getContext(), HelpAndFeedbackActivity.class));
+                }
+                else if (view == mFrameLayout_About)
+                {
+                    // Show about activity
+                    startActivity(new Intent(view.getContext(), AboutActivity.class));
                 }
             }
             else
@@ -259,5 +231,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
+    }
+
+    /**
+     * Sets a tint list to the icons
+     *
+     * Uses DrawableCompat to make it work before SKD 21
+     */
+    private void setUpIcons()
+    {
+        // Icons tint list
+        final ImageView homeImageView =
+                (ImageView) findViewById(R.id.navigation_drawer_items_list_icon_home);
+        final Drawable homeDrawable = DrawableCompat.wrap(homeImageView.getDrawable());
+        DrawableCompat.setTintList
+                (
+                        homeDrawable.mutate(),
+                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
+                );
+
+        homeImageView.setImageDrawable(homeDrawable);
+
+        final ImageView exploreImageView =
+                (ImageView) findViewById(R.id.navigation_drawer_items_list_icon_explore);
+        final Drawable exploreDrawable = DrawableCompat.wrap(exploreImageView.getDrawable());
+        DrawableCompat.setTintList
+                (
+                        exploreDrawable.mutate(),
+                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
+                );
+
+        exploreImageView.setImageDrawable(exploreDrawable);
     }
 }

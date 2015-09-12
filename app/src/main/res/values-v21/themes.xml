@@ -2,11 +2,7 @@
 
 <resources>
 
-    <style
-        name="BaseTheme.MainTheme">
-    </style>
-
-    <style name="BaseTheme.MainTheme.WithNavDrawer">
+    <style name="AppTheme.WithNavDrawer">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentStatus">true</item>

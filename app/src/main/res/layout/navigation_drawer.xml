@@ -15,19 +15,25 @@
         <FrameLayout
             android:id="@+id/navigation_drawer_account_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/navigation_drawer_account_section_default_height"
+            android:layout_height="@dimen/nav_drawer_account_section_default_height"
             android:clickable="true"
             android:foreground="?selectableItemBackground"
-            tools:layout_height="@dimen/navigation_drawer_account_section_default_height">
+            tools:layout_height="@dimen/nav_drawer_account_section_default_height">
 
-            <ImageView
-                android:id="@+id/navigation_drawer_user_account_picture_cover"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:foreground="@color/black_alpha_50"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_nav_drawer_account_background"
-                tools:ignore="ContentDescription" />
+                android:foreground="@color/black_alpha_50">
+
+                <ImageView
+                    android:id="@+id/navigation_drawer_user_account_picture_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_nav_drawer_account_background"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
 
             <RelativeLayout
                 android:id="@+id/navigation_drawer_account_section"
@@ -42,7 +48,7 @@
                 <LinearLayout
                     android:id="@+id/navigation_drawer_account_information"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/navigation_drawer_account_information_height"
+                    android:layout_height="@dimen/nav_drawer_account_information_height"
                     android:layout_alignParentBottom="true"
                     android:gravity="center_vertical"
                     android:orientation="vertical">
@@ -65,8 +71,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/navigation_drawer_user_account_picture_profile"
-                    android:layout_width="@dimen/navigation_drawer_profile_image_size"
-                    android:layout_height="@dimen/navigation_drawer_profile_image_size"
+                    android:layout_width="@dimen/nav_drawer_profile_image_size"
+                    android:layout_height="@dimen/nav_drawer_profile_image_size"
                     android:layout_above="@id/navigation_drawer_account_information"
                     android:src="@drawable/ic_account_circle_white_64dp" />
 

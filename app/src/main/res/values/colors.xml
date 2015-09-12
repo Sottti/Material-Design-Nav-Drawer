@@ -9,16 +9,11 @@
 
     <!-- Text -->
     <!-- Text -->
-    <color name="text_black_100">#000000</color>
     <color name="text_black_text_87">#DE000000</color>
     <color name="text_black_secondary_icon_54">#8A000000</color>
-    <color name="text_black_disable_hint_26">#42000000</color>
     <color name="text_black_divider_12">#1F000000</color>
 
     <color name="text_white_text_icons_100">#FFFFFF</color>
-    <color name="text_white_secondary_70">#B3FFFFFF</color>
-    <color name="text_white_disabled_hint_30">#4DFFFFFF</color>
-    <color name="text_white_divider_12">#1FFFFFFF</color>
 
     <!-- NavigationDrawer -->
     <color name="navigation_drawer_background">#ffffffff</color>

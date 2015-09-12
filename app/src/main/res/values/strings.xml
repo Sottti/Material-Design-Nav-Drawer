@@ -5,7 +5,9 @@
     <!-- Toolbar titles -->
     <string name="toolbar_title_home">Home</string>
     <string name="toolbar_title_explore">Explore</string>
-    <string name="other_activity">Other Activity</string>
+    <string name="toolbar_title_about">About</string>
+    <string name="toolbar_title_account">Account</string>
+    <string name="toolbar_title_help_and_fedback">Help&amp;Feedback</string>
 
     <!-- Navigation Drawer -->
     <string name="nav_drawer_item_home">Home</string>
@@ -18,9 +20,5 @@
     <string name="tag_nav_drawer_special_entry">nav_drawer_special_entry</string>
     <string name="tools_text_account_information_username">Sotti</string>
     <string name="tools_text_account_information_email">sotti@sottocorp.com</string>
-
-    <!-- Typeface names -->
-    <string name="typeface_roboto_regular">Roboto-Regular</string>
-    <string name="typeface_roboto_medium">Roboto-Medium</string>
 
 </resources>

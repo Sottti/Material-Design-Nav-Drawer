@@ -9,13 +9,13 @@ import com.sottocorp.materialdesignnavdrawer.R;
 /**
  * Represents other activity different from the main activity
  */
-public class OtherActivity extends AppCompatActivity
+public class AccountActivity extends AppCompatActivity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.other_activity);
+        setContentView(R.layout.account_activity);
 
         initialise();
     }
@@ -31,6 +31,7 @@ public class OtherActivity extends AppCompatActivity
         if (getSupportActionBar() != null)
         {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.toolbar_title_account);
         }
     }
 }

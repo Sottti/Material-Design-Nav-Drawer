@@ -13,20 +13,20 @@ import com.sottocorp.materialdesignnavdrawer.R;
 /**
  * Fragment showing a solid background color
  */
-public class ColorFragment extends Fragment
+public class ImageFragment extends Fragment
 {
     public static final String sARGUMENT_IMAGE_CODE = "image";
 
-    public static ColorFragment newInstance(Bundle bundle)
+    public static ImageFragment newInstance(Bundle bundle)
     {
-        final ColorFragment colorFragment = new ColorFragment();
+        final ImageFragment imageFragment = new ImageFragment();
 
         if (bundle != null)
         {
-            colorFragment.setArguments(bundle);
+            imageFragment.setArguments(bundle);
         }
 
-        return colorFragment;
+        return imageFragment;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ColorFragment extends Fragment
     )
     {
         // The last two arguments ensure LayoutParams are inflated properly
-        final View view = inflater.inflate(R.layout.colored_fragment, container, false);
+        final View view = inflater.inflate(R.layout.image_fragment, container, false);
         initialise(view);
 
         return view;
