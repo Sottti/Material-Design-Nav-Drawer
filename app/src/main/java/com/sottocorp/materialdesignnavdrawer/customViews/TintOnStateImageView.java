@@ -4,18 +4,19 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.demo.materialdesignnavdrawer.R;
+import com.sottocorp.materialdesignnavdrawer.R;
 
 /**
  * ImageView that changes it's image color depending on the state (pressed, selected...)
- *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class TintOnStateImageView extends ImageView
 {
+    private Context mContext;
     private ColorStateList mColorStateList;
 
     public TintOnStateImageView(Context context)
@@ -36,15 +37,22 @@ public class TintOnStateImageView extends ImageView
     }
 
     /**
-     * Create, bind and set up the resources
+     * Creates, binds and sets up the resources
      *
      * @param context is the context to get the resources from
      * @param attributeSet is the attributeSet
      * @param defStyle is the style
      */
-    private void initialise(Context context, AttributeSet attributeSet, int defStyle)
+    private void initialise
+    (
+            @NonNull final Context context,
+            AttributeSet attributeSet,
+            final int defStyle
+    )
     {
-        TypedArray a = context.obtainStyledAttributes(attributeSet, R.styleable.TintOnStateImageView, defStyle, 0);
+        mContext = context;
+        TypedArray a =
+                context.obtainStyledAttributes(attributeSet, R.styleable.TintOnStateImageView, defStyle, 0);
         mColorStateList = a.getColorStateList(R.styleable.TintOnStateImageView_colorStateList);
         a.recycle();
     }
@@ -65,8 +73,8 @@ public class TintOnStateImageView extends ImageView
      */
     private void updateTintColor()
     {
-        int color = mColorStateList.getColorForState(getDrawableState(),
-                getResources().getColor(R.color.nav_drawer_item_icon_normal));
+        final int color = mColorStateList.getColorForState(getDrawableState(),
+                ContextCompat.getColor(mContext, R.color.nav_drawer_item_icon_normal));
 
         super.setColorFilter(color, PorterDuff.Mode.SRC_IN);
     }

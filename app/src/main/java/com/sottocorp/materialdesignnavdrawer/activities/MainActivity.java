@@ -1,42 +1,37 @@
 package com.sottocorp.materialdesignnavdrawer.activities;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.demo.materialdesignnavdrawer.R;
+import com.sottocorp.materialdesignnavdrawer.R;
 import com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout;
 import com.sottocorp.materialdesignnavdrawer.fragments.ColorFragment;
-import com.sottocorp.materialdesignnavdrawer.managers.ManagerTypeface;
 import com.sottocorp.materialdesignnavdrawer.utils.UtilsDevice;
 import com.sottocorp.materialdesignnavdrawer.utils.UtilsMiscellaneous;
 
 /**
  * Main class hosting the navigation drawer
- *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private final static double sNAVIGATION_DRAWER_ACCOUNT_SECTION_ASPECT_RATIO = 9d/16d;
+    private final static double sNavigationDrawerAccountSectionAspectRatio = 9d/16d;
 
     private DrawerLayout mDrawerLayout;
-    private FrameLayout mFrameLayout_AccountView;
     private LinearLayout mNavDrawerEntriesRootView;
-    private ActionBarDrawerToggle mActionBarDrawerToggle;
-    private ScrimInsetsFrameLayout mScrimInsetsFrameLayout;
-    private FrameLayout mFrameLayout_Home, mFrameLayout_Explore, mFrameLayout_HelpAndFeedback,
-            mFrameLayout_About;
-    private TextView mTextView_AccountDisplayName, mTextView_AccountEmail;
-    private TextView mTextView_Home, mTextView_Explore, mTextView_HelpAndFeedback, mTextView_About;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * Bind, create and set up the resources
+     * Binds, creates and sets up the resources
      */
     private void initialise()
     {
@@ -56,45 +51,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
+        // Icons tint list
+        final ImageView homeImageView =
+                (ImageView) findViewById(R.id.navigation_drawer_items_list_icon_home);
+        final Drawable homeDrawable = DrawableCompat.wrap(homeImageView.getDrawable());
+        DrawableCompat.setTintList
+                (
+                        homeDrawable.mutate(),
+                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
+                );
+
+        homeImageView.setImageDrawable(homeDrawable);
+
+        final ImageView exploreImageView =
+                (ImageView) findViewById(R.id.navigation_drawer_items_list_icon_explore);
+        final Drawable exploreDrawable = DrawableCompat.wrap(exploreImageView.getDrawable());
+        DrawableCompat.setTintList
+                (
+                        exploreDrawable.mutate(),
+                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
+                );
+
+        exploreImageView.setImageDrawable(exploreDrawable);
+
         // Layout resources
-        mFrameLayout_AccountView = (FrameLayout) findViewById(R.id.navigation_drawer_account_view);
-        mNavDrawerEntriesRootView = (LinearLayout)findViewById(R.id.navigation_drawer_linearLayout_entries_root_view);
+        final FrameLayout mFrameLayout_AccountView =
+                (FrameLayout) findViewById(R.id.navigation_drawer_account_view);
 
-        mFrameLayout_Home = (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_home);
-        mFrameLayout_Explore = (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_explore);
-        mFrameLayout_HelpAndFeedback = (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_help_and_feedback);
-        mFrameLayout_About = (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_about);
+        mNavDrawerEntriesRootView =
+                (LinearLayout)findViewById(R.id.navigation_drawer_linearLayout_entries_root_view);
 
-        mTextView_AccountDisplayName = (TextView) findViewById(R.id.navigation_drawer_account_information_display_name);
-        mTextView_AccountEmail = (TextView) findViewById(R.id.navigation_drawer_account_information_email);
+        final FrameLayout frameLayout_Home =
+                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_home);
 
-        mTextView_Home = (TextView) findViewById(R.id.navigation_drawer_items_textView_home);
-        mTextView_Explore = (TextView) findViewById(R.id.navigation_drawer_items_textView_explore);
-        mTextView_HelpAndFeedback = (TextView) findViewById(R.id.navigation_drawer_items_textView_help_and_feedback);
-        mTextView_About = (TextView) findViewById(R.id.navigation_drawer_items_textView_about);
+        final FrameLayout frameLayout_Explore =
+                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_explore);
 
-        // Typefaces
-        mTextView_AccountDisplayName.setTypeface(ManagerTypeface.getTypeface(this, R.string.typeface_roboto_medium));
-        mTextView_AccountEmail.setTypeface(ManagerTypeface.getTypeface(this, R.string.typeface_roboto_regular));
-        mTextView_Home.setTypeface(ManagerTypeface.getTypeface(this, R.string.typeface_roboto_medium));
-        mTextView_Explore.setTypeface(ManagerTypeface.getTypeface(this, R.string.typeface_roboto_medium));
-        mTextView_HelpAndFeedback.setTypeface(ManagerTypeface.getTypeface(this, R.string.typeface_roboto_medium));
-        mTextView_About.setTypeface(ManagerTypeface.getTypeface(this, R.string.typeface_roboto_medium));
+        final FrameLayout frameLayout_HelpAndFeedback =
+                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_help_and_feedback);
+
+        final FrameLayout frameLayout_About =
+                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_about);
 
         // Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_activity_DrawerLayout);
-        mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.primaryDark));
-        mScrimInsetsFrameLayout = (ScrimInsetsFrameLayout) findViewById(R.id.main_activity_navigation_drawer_rootLayout);
+        mDrawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.primaryDark));
+        ScrimInsetsFrameLayout mScrimInsetsFrameLayout =
+                (ScrimInsetsFrameLayout) findViewById(R.id.main_activity_navigation_drawer_rootLayout);
 
-        mActionBarDrawerToggle = new ActionBarDrawerToggle
+        final ActionBarDrawerToggle mActionBarDrawerToggle = new ActionBarDrawerToggle
                 (
                         this,
                         mDrawerLayout,
                         mToolbar,
                         R.string.navigation_drawer_opened,
                         R.string.navigation_drawer_closed
-                )
-        {
+                ) {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset)
             {
@@ -115,30 +127,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mActionBarDrawerToggle.syncState();
 
         // Navigation Drawer layout width
-        int possibleMinDrawerWidth = UtilsDevice.getScreenWidth(this) -
+        final int possibleMinDrawerWidth = UtilsDevice.getScreenWidth(this) -
                 UtilsMiscellaneous.getThemeAttributeDimensionSize(this, android.R.attr.actionBarSize);
-        int maxDrawerWidth = getResources().getDimensionPixelSize(R.dimen.navigation_drawer_max_width);
+        final int maxDrawerWidth = getResources().getDimensionPixelSize(R.dimen.navigation_drawer_max_width);
 
         mScrimInsetsFrameLayout.getLayoutParams().width = Math.min(possibleMinDrawerWidth, maxDrawerWidth);
 
         // Account section height
         mFrameLayout_AccountView.getLayoutParams().height = (int) (mScrimInsetsFrameLayout.getLayoutParams().width
-                * sNAVIGATION_DRAWER_ACCOUNT_SECTION_ASPECT_RATIO);
+                * sNavigationDrawerAccountSectionAspectRatio);
 
         // Nav Drawer item click listener
         mFrameLayout_AccountView.setOnClickListener(this);
-        mFrameLayout_Home.setOnClickListener(this);
-        mFrameLayout_Explore.setOnClickListener(this);
-        mFrameLayout_HelpAndFeedback.setOnClickListener(this);
-        mFrameLayout_About.setOnClickListener(this);
+        frameLayout_Home.setOnClickListener(this);
+        frameLayout_Explore.setOnClickListener(this);
+        frameLayout_HelpAndFeedback.setOnClickListener(this);
+        frameLayout_About.setOnClickListener(this);
 
         // Set the first item as selected for the first time
         getSupportActionBar().setTitle(R.string.toolbar_title_home);
-        mFrameLayout_Home.setSelected(true);
+        frameLayout_Home.setSelected(true);
 
         // Create the first fragment to be shown
-        Bundle bundle = new Bundle();
-        bundle.putInt(ColorFragment.sARGUMENT_COLOR, R.color.blue_500);
+        final Bundle bundle = new Bundle();
+        bundle.putInt(ColorFragment.sARGUMENT_IMAGE_CODE, 0);
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -151,9 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if (view.getId() == R.id.navigation_drawer_account_view)
         {
-            mDrawerLayout.closeDrawer(Gravity.START);
-
-            // If the user is signed in, go to the profile, otherwise show sign up / sign in
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+            Toast.makeText(this, "To Account/SignUp/SignIn", Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -170,11 +181,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             getSupportActionBar().setTitle(getString(R.string.toolbar_title_home));
                         }
 
-
                         view.setSelected(true);
 
-                        Bundle bundle = new Bundle();
-                        bundle.putInt(ColorFragment.sARGUMENT_COLOR, R.color.blue_500);
+                        final Bundle bundle = new Bundle();
+                        bundle.putInt(ColorFragment.sARGUMENT_IMAGE_CODE, 0);
 
                         // Insert the fragment by replacing any existing fragment
                         getSupportFragmentManager()
@@ -193,8 +203,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         view.setSelected(true);
 
-                        Bundle bundle = new Bundle();
-                        bundle.putInt(ColorFragment.sARGUMENT_COLOR, R.color.amber_500);
+                        final Bundle bundle = new Bundle();
+                        bundle.putInt(ColorFragment.sARGUMENT_IMAGE_CODE, 1);
 
                         // Insert the fragment by replacing any existing fragment
                         getSupportFragmentManager()
@@ -220,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             else
             {
-                mDrawerLayout.closeDrawer(Gravity.START);
+                mDrawerLayout.closeDrawer(GravityCompat.START);
             }
         }
     }
@@ -230,31 +240,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      *
      * @param pressedRow is the pressed row in the drawer
      */
-    private void onRowPressed(FrameLayout pressedRow)
+    private void onRowPressed(@NonNull final FrameLayout pressedRow)
     {
         if (pressedRow.getTag() != getResources().getString(R.string.tag_nav_drawer_special_entry))
         {
             for (int i = 0; i < mNavDrawerEntriesRootView.getChildCount(); i++)
             {
-                View currentView = mNavDrawerEntriesRootView.getChildAt(i);
+                final View currentView = mNavDrawerEntriesRootView.getChildAt(i);
 
-                boolean currentViewIsMainEntry = currentView.getTag() ==
+                final boolean currentViewIsMainEntry = currentView.getTag() ==
                         getResources().getString(R.string.tag_nav_drawer_main_entry);
 
                 if (currentViewIsMainEntry)
                 {
-                    if (currentView == pressedRow)
-                    {
-                        currentView.setSelected(true);
-                    }
-                    else
-                    {
-                        currentView.setSelected(false);
-                    }
+                    currentView.setSelected(currentView == pressedRow);
                 }
             }
         }
 
-        mDrawerLayout.closeDrawer(Gravity.START);
+        mDrawerLayout.closeDrawer(GravityCompat.START);
     }
 }

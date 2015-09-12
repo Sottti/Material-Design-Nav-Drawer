@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_navigation_drawer_rootLayout"
     style="@style/ScrimInsetsLayout"
@@ -19,20 +20,14 @@
             android:foreground="?selectableItemBackground"
             tools:layout_height="@dimen/navigation_drawer_account_section_default_height">
 
-            <FrameLayout
+            <ImageView
+                android:id="@+id/navigation_drawer_user_account_picture_cover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:foreground="@color/black_alpha_50">
-
-                <com.android.volley.toolbox.NetworkImageView
-                    android:id="@+id/navigation_drawer_user_account_picture_cover"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/image_nav_drawer_account_background"
-                    android:scaleType="centerCrop"
-                    tools:ignore="ContentDescription" />
-
-            </FrameLayout>
+                android:foreground="@color/black_alpha_50"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_nav_drawer_account_background"
+                tools:ignore="ContentDescription" />
 
             <RelativeLayout
                 android:id="@+id/navigation_drawer_account_section"
@@ -54,15 +49,17 @@
 
                     <TextView
                         android:id="@+id/navigation_drawer_account_information_display_name"
-                        style="@style/NavDrawerAccountInfoText"
-                        android:text="@string/tools_text_account_information_username"
-                        tools:fontFamily="sans-serif-medium"/>
+                        style="@style/Body2.White.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tools_text_account_information_username" />
 
                     <TextView
                         android:id="@+id/navigation_drawer_account_information_email"
-                        style="@style/NavDrawerAccountInfoText"
-                        android:text="@string/tools_text_account_information_email"
-                        tools:fontFamily="sans-serif"/>
+                        style="@style/Body1.White.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tools_text_account_information_email" />
 
                 </LinearLayout>
 
@@ -96,7 +93,7 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_home"
                     style="@style/NavDrawerRowLayout.Main">
 
-                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_home"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_home_white_24dp"
@@ -107,8 +104,7 @@
                         android:id="@+id/navigation_drawer_items_textView_home"
                         style="@style/NavDrawerRowItemText"
                         android:text="@string/nav_drawer_item_home"
-                        tools:fontFamily="sans-serif-medium"
-                        tools:textColor="@color/nav_drawer_item_text_selected"/>
+                        tools:textColor="@color/nav_drawer_item_text_selected" />
 
                 </FrameLayout>
 
@@ -116,17 +112,17 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_explore"
                     style="@style/NavDrawerRowLayout.Main" >
 
-                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_explore"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_explore_white_24dp"
-                        tools:ignore="ContentDescription" />
+                        tools:ignore="ContentDescription"
+                        tools:tint="@color/nav_drawer_row_icon" />
 
                     <TextView
                         android:id="@+id/navigation_drawer_items_textView_explore"
                         style="@style/NavDrawerRowItemText"
-                        android:text="@string/nav_drawer_item_explore"
-                        tools:fontFamily="sans-serif-medium"/>
+                        android:text="@string/nav_drawer_item_explore" />
 
                 </FrameLayout>
 
@@ -137,17 +133,17 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_help_and_feedback"
                     style="@style/NavDrawerRowLayout.Secondary">
 
-                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_help_and_feedback"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_help_white_24dp"
+                        android:tint="@color/text_black_secondary_icon_54"
                         tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/navigation_drawer_items_textView_help_and_feedback"
                         style="@style/NavDrawerRowItemText"
-                        android:text="@string/nav_drawer_help_and_feedback"
-                        tools:fontFamily="sans-serif-medium" />
+                        android:text="@string/nav_drawer_help_and_feedback" />
 
                 </FrameLayout>
 
@@ -155,17 +151,17 @@
                     android:id="@+id/navigation_drawer_items_list_linearLayout_about"
                     style="@style/NavDrawerRowLayout.Secondary">
 
-                    <com.sottocorp.materialdesignnavdrawer.customViews.TintOnStateImageView
+                    <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_about"
                         style="@style/NavDrawerRowItemIcon"
                         android:src="@drawable/ic_info_white_24dp"
+                        android:tint="@color/text_black_secondary_icon_54"
                         tools:ignore="ContentDescription" />
 
                     <TextView
                         android:id="@+id/navigation_drawer_items_textView_about"
                         style="@style/NavDrawerRowItemText"
-                        android:text="@string/nav_drawer_about"
-                        tools:fontFamily="sans-serif-medium" />
+                        android:text="@string/nav_drawer_about" />
 
                 </FrameLayout>
 

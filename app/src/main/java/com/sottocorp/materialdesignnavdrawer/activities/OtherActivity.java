@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.demo.materialdesignnavdrawer.R;
+import com.sottocorp.materialdesignnavdrawer.R;
 
 /**
  * Represents other activity different from the main activity
- *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class OtherActivity extends AppCompatActivity
 {
@@ -23,17 +21,16 @@ public class OtherActivity extends AppCompatActivity
     }
 
     /**
-     * Create, bind and set up the resources
+     * Creates, binds and sets up the resources
      */
     private void initialise()
     {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null)
         {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
     }
 }

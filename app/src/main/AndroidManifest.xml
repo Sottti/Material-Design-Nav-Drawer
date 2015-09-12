@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.demo.materialdesignnavdrawer" >
+    package="com.sottocorp.materialdesignnavdrawer" >
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/BaseTheme.MainTheme" >

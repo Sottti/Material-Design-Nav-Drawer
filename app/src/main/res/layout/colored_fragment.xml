@@ -6,6 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:foreground="?android:selectableItemBackground"
-    tools:background="@color/green_500">
+    android:foreground="?android:selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/neo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/neo"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/morpheo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/morpheus"
+        tools:ignore="ContentDescription" />
 </FrameLayout>

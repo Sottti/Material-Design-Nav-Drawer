@@ -24,7 +24,7 @@ import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.demo.materialdesignnavdrawer.R;
+import com.sottocorp.materialdesignnavdrawer.R;
 
 /**
  * A layout that draws something in the insets passed to {@link #fitSystemWindows(Rect)}, i.e. the area above UI chrome
@@ -34,7 +34,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
     private Drawable mInsetForeground;
 
     private Rect mInsets;
-    private Rect mTempRect = new Rect();
+    private final Rect mTempRect = new Rect();
     private OnInsetsCallback mOnInsetsCallback;
 
     public ScrimInsetsFrameLayout(Context context) {
@@ -135,7 +135,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         mOnInsetsCallback = onInsetsCallback;
     }
 
-    public static interface OnInsetsCallback {
-        public void onInsetsChanged(Rect insets);
+    public interface OnInsetsCallback {
+        void onInsetsChanged(Rect insets);
     }
 }

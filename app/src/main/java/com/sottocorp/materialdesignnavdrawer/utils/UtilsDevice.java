@@ -1,12 +1,10 @@
 package com.sottocorp.materialdesignnavdrawer.utils;
 
 import android.content.Context;
-import android.util.DisplayMetrics;
+import android.support.annotation.NonNull;
 
 /**
  * This utility class is for device related stuff.
- *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class UtilsDevice
 {
@@ -17,10 +15,8 @@ public class UtilsDevice
      *
      * @return the screen width in pixels
      */
-    public static int getScreenWidth(Context context)
+    public static int getScreenWidth(@NonNull final Context context)
     {
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-
-        return metrics.widthPixels;
+        return context.getResources().getDisplayMetrics().widthPixels;
     }
 }

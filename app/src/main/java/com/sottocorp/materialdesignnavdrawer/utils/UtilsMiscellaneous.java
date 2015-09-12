@@ -2,11 +2,10 @@ package com.sottocorp.materialdesignnavdrawer.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.NonNull;
 
 /**
  * Utility class
- *
- * @author Sotti https://plus.google.com/+PabloCostaTirado/about
  */
 public class UtilsMiscellaneous
 {
@@ -18,9 +17,10 @@ public class UtilsMiscellaneous
      *
      * @return the size in pixels of an attribute dimension
      */
-    public static int getThemeAttributeDimensionSize(Context context, int attr)
+    public static int getThemeAttributeDimensionSize(@NonNull final Context context, final int attr)
     {
         TypedArray a = null;
+
         try
         {
             a = context.getTheme().obtainStyledAttributes(new int[] { attr });
