@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_activity_DrawerLayout);
 
-        ScrimInsetsFrameLayout mScrimInsetsFrameLayout =
+        final ScrimInsetsFrameLayout mScrimInsetsFrameLayout =
                 (ScrimInsetsFrameLayout) findViewById(R.id.main_activity_navigation_drawer_rootLayout);
 
         final ActionBarDrawerToggle mActionBarDrawerToggle = new ActionBarDrawerToggle
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             mDrawerLayout.closeDrawer(GravityCompat.START);
 
-            // Start account/signup/signin
+            // SignUp/SignIn/Profile
             startActivity(new Intent(view.getContext(), AccountActivity.class));
         }
         else
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else if (view == mFrameLayout_HelpAndFeedback)
                 {
-                    // Start help/feedback acitvity
+                    // Start help/feedback activity
                     startActivity(new Intent(view.getContext(), HelpAndFeedbackActivity.class));
                 }
                 else if (view == mFrameLayout_About)
