@@ -12,22 +12,20 @@
 
         <activity
             android:name="com.sottocorp.materialdesignnavdrawer.activities.MainActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.WithNavDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".activities.AccountActivity"
-            android:label="@string/toolbar_title_about"
+            android:label="@string/toolbar_title_account"
             android:parentActivityName="com.sottocorp.materialdesignnavdrawer.activities.MainActivity">
         </activity>
 
         <activity android:name=".activities.HelpAndFeedbackActivity"
-            android:label="@string/toolbar_title_about"
+            android:label="@string/toolbar_title_help_and_feedback"
             android:parentActivityName="com.sottocorp.materialdesignnavdrawer.activities.MainActivity">
         </activity>
 

@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 {
     private DrawerLayout mDrawerLayout;
     private LinearLayout mNavDrawerEntriesRootView;
+    private PercentRelativeLayout mFrameLayout_AccountView;
     private FrameLayout mFrameLayout_Home, mFrameLayout_Explore,
                     mFrameLayout_HelpAndFeedback, mFrameLayout_About;
-    private PercentRelativeLayout mFrameLayout_AccountView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * Binds, creates and sets up the resources
+     * Creates, binds and sets up the resources
      */
     private void initialise()
     {
@@ -55,29 +55,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setUpIcons();
 
         // Layout resources
-        mFrameLayout_AccountView =
-                (PercentRelativeLayout) findViewById(R.id.navigation_drawer_account_view);
+        mFrameLayout_AccountView = (PercentRelativeLayout) findViewById
+                (R.id.navigation_drawer_account_view);
 
-        mNavDrawerEntriesRootView =
-                (LinearLayout)findViewById(R.id.navigation_drawer_linearLayout_entries_root_view);
+        mNavDrawerEntriesRootView = (LinearLayout)findViewById
+                (R.id.navigation_drawer_linearLayout_entries_root_view);
 
-        mFrameLayout_Home =
-                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_home);
+        mFrameLayout_Home = (FrameLayout) findViewById
+                (R.id.navigation_drawer_items_list_linearLayout_home);
 
-        mFrameLayout_Explore =
-                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_explore);
+        mFrameLayout_Explore = (FrameLayout) findViewById
+                (R.id.navigation_drawer_items_list_linearLayout_explore);
 
-        mFrameLayout_HelpAndFeedback =
-                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_help_and_feedback);
+        mFrameLayout_HelpAndFeedback = (FrameLayout) findViewById
+                (R.id.navigation_drawer_items_list_linearLayout_help_and_feedback);
 
-        mFrameLayout_About =
-                (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_about);
+        mFrameLayout_About = (FrameLayout) findViewById
+                (R.id.navigation_drawer_items_list_linearLayout_about);
 
         // Navigation Drawer
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_activity_DrawerLayout);
 
-        final ScrimInsetsFrameLayout mScrimInsetsFrameLayout =
-                (ScrimInsetsFrameLayout) findViewById(R.id.main_activity_navigation_drawer_rootLayout);
+        final ScrimInsetsFrameLayout mScrimInsetsFrameLayout = (ScrimInsetsFrameLayout)
+                findViewById(R.id.main_activity_navigation_drawer_rootLayout);
 
         final ActionBarDrawerToggle mActionBarDrawerToggle = new ActionBarDrawerToggle
         (
@@ -101,9 +101,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mActionBarDrawerToggle.syncState();
 
         // Navigation Drawer layout width
-        final int possibleMinDrawerWidth = UtilsDevice.getScreenWidth(this) -
-                UtilsMiscellaneous.getThemeAttributeDimensionSize(this, android.R.attr.actionBarSize);
-        final int maxDrawerWidth = getResources().getDimensionPixelSize(R.dimen.navigation_drawer_max_width);
+        final int possibleMinDrawerWidth =
+                UtilsDevice.getScreenWidth(this) -
+                UtilsMiscellaneous
+                        .getThemeAttributeDimensionSize(this, android.R.attr.actionBarSize);
+
+        final int maxDrawerWidth =
+                getResources().getDimensionPixelSize(R.dimen.navigation_drawer_max_width);
 
         mScrimInsetsFrameLayout.getLayoutParams().width =
                 Math.min(possibleMinDrawerWidth, maxDrawerWidth);

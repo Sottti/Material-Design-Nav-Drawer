@@ -31,7 +31,6 @@ public class AccountActivity extends AppCompatActivity
         if (getSupportActionBar() != null)
         {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(R.string.toolbar_title_account);
         }
     }
 }

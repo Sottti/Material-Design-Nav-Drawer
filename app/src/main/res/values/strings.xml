@@ -7,7 +7,7 @@
     <string name="toolbar_title_explore">Explore</string>
     <string name="toolbar_title_about">About</string>
     <string name="toolbar_title_account">Account</string>
-    <string name="toolbar_title_help_and_feddback">Help&amp;Feedback</string>
+    <string name="toolbar_title_help_and_feedback">Help&amp;Feedback</string>
 
     <!-- Navigation Drawer -->
     <string name="nav_drawer_item_home">Home</string>
