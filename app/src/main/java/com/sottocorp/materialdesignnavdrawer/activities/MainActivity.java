@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.percent.PercentRelativeLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.GravityCompat;
@@ -27,12 +28,11 @@ import com.sottocorp.materialdesignnavdrawer.utils.UtilsMiscellaneous;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private final static double sNavigationDrawerAccountSectionAspectRatio = 9d/16d;
-
     private DrawerLayout mDrawerLayout;
     private LinearLayout mNavDrawerEntriesRootView;
-    private FrameLayout mFrameLayout_AccountView, mFrameLayout_Home,
-            mFrameLayout_Explore, mFrameLayout_HelpAndFeedback, mFrameLayout_About;
+    private FrameLayout mFrameLayout_Home, mFrameLayout_Explore,
+                    mFrameLayout_HelpAndFeedback, mFrameLayout_About;
+    private PercentRelativeLayout mFrameLayout_AccountView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Layout resources
         mFrameLayout_AccountView =
-                (FrameLayout) findViewById(R.id.navigation_drawer_account_view);
+                (PercentRelativeLayout) findViewById(R.id.navigation_drawer_account_view);
 
         mNavDrawerEntriesRootView =
                 (LinearLayout)findViewById(R.id.navigation_drawer_linearLayout_entries_root_view);
@@ -107,10 +107,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mScrimInsetsFrameLayout.getLayoutParams().width =
                 Math.min(possibleMinDrawerWidth, maxDrawerWidth);
-
-        // Account section height
-        mFrameLayout_AccountView.getLayoutParams().height = (int) (mScrimInsetsFrameLayout.getLayoutParams().width
-                * sNavigationDrawerAccountSectionAspectRatio);
 
         // Nav Drawer item click listener
         mFrameLayout_AccountView.setOnClickListener(this);
@@ -247,7 +243,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DrawableCompat.setTintList
                 (
                         homeDrawable.mutate(),
-                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
+                        ContextCompat.getColorStateList(this, R.color.nav_drawer_icon)
                 );
 
         homeImageView.setImageDrawable(homeDrawable);
@@ -258,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DrawableCompat.setTintList
                 (
                         exploreDrawable.mutate(),
-                        ContextCompat.getColorStateList(this, R.color.nav_drawer_row_icon)
+                        ContextCompat.getColorStateList(this, R.color.nav_drawer_icon)
                 );
 
         exploreImageView.setImageDrawable(exploreDrawable);

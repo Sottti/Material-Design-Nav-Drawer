@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Navigation Drawer -->
+    <dimen name="navigation_drawer_max_width">400dp</dimen>
+
+    <dimen name="nav_drawer_vertical_keyline_icon_left">24dp</dimen>
+    <dimen name="nav_drawer_vertical_keyline_text_left">80dp</dimen>
+    <dimen name="nav_drawer_vertical_keyline_right">24dp</dimen>
+
+</resources>

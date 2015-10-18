@@ -2,28 +2,30 @@
 
 <com.sottocorp.materialdesignnavdrawer.customViews.ScrimInsetsFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_navigation_drawer_rootLayout"
     style="@style/ScrimInsetsLayout"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_marginEnd="?actionBarSize"
+    tools:layout_marginRight="?actionBarSize">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <FrameLayout
+        <android.support.percent.PercentRelativeLayout
             android:id="@+id/navigation_drawer_account_view"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/nav_drawer_account_section_default_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:clickable="true"
-            android:foreground="?selectableItemBackground"
-            tools:layout_height="@dimen/nav_drawer_account_section_default_height">
+            android:foreground="?selectableItemBackground">
 
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:foreground="@color/black_alpha_50">
+                android:foreground="@color/black_alpha_50"
+                app:layout_aspectRatio="178%"
+                app:layout_widthPercent="100%">
 
                 <ImageView
                     android:id="@+id/navigation_drawer_user_account_picture_cover"
@@ -37,18 +39,18 @@
 
             <RelativeLayout
                 android:id="@+id/navigation_drawer_account_section"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:paddingBottom="@dimen/nav_drawer_vertical_spacing_listing"
                 android:paddingEnd="@dimen/nav_drawer_vertical_keyline_right"
                 android:paddingLeft="@dimen/nav_drawer_vertical_keyline_icon_left"
                 android:paddingRight="@dimen/nav_drawer_vertical_keyline_right"
-                android:paddingStart="@dimen/nav_drawer_vertical_keyline_icon_left">
+                android:paddingStart="@dimen/nav_drawer_vertical_keyline_icon_left"
+                app:layout_aspectRatio="178%"
+                app:layout_widthPercent="100%">
 
                 <LinearLayout
                     android:id="@+id/navigation_drawer_account_information"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/nav_drawer_account_information_height"
+                    android:layout_height="56dp"
                     android:layout_alignParentBottom="true"
                     android:gravity="center_vertical"
                     android:orientation="vertical">
@@ -74,11 +76,11 @@
                     android:layout_width="@dimen/nav_drawer_profile_image_size"
                     android:layout_height="@dimen/nav_drawer_profile_image_size"
                     android:layout_above="@id/navigation_drawer_account_information"
-                    android:src="@drawable/ic_account_circle_white_64dp" />
+                    android:src="@drawable/ic_account_circle_64dp" />
 
             </RelativeLayout>
 
-        </FrameLayout>
+        </android.support.percent.PercentRelativeLayout>
 
         <!-- Drawer items -->
         <ScrollView
@@ -97,12 +99,13 @@
 
                 <FrameLayout
                     android:id="@+id/navigation_drawer_items_list_linearLayout_home"
-                    style="@style/NavDrawerRowLayout.Main">
+                    style="@style/NavDrawerRowLayout.Main"
+                    tools:background="@color/nav_drawer_row_item_selected">
 
                     <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_home"
                         style="@style/NavDrawerRowItemIcon"
-                        android:src="@drawable/ic_home_white_24dp"
+                        android:src="@drawable/ic_home_24dp"
                         tools:ignore="ContentDescription"
                         tools:tint="@color/nav_drawer_item_icon_selected" />
 
@@ -121,9 +124,9 @@
                     <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_explore"
                         style="@style/NavDrawerRowItemIcon"
-                        android:src="@drawable/ic_explore_white_24dp"
+                        android:src="@drawable/ic_explore_24dp"
                         tools:ignore="ContentDescription"
-                        tools:tint="@color/nav_drawer_row_icon" />
+                        tools:tint="@color/nav_drawer_icon" />
 
                     <TextView
                         android:id="@+id/navigation_drawer_items_textView_explore"
@@ -142,7 +145,7 @@
                     <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_help_and_feedback"
                         style="@style/NavDrawerRowItemIcon"
-                        android:src="@drawable/ic_help_white_24dp"
+                        android:src="@drawable/ic_help_24dp"
                         android:tint="@color/text_black_secondary_icon_54"
                         tools:ignore="ContentDescription" />
 
@@ -160,7 +163,7 @@
                     <ImageView
                         android:id="@+id/navigation_drawer_items_list_icon_about"
                         style="@style/NavDrawerRowItemIcon"
-                        android:src="@drawable/ic_info_white_24dp"
+                        android:src="@drawable/ic_info_24dp"
                         android:tint="@color/text_black_secondary_icon_54"
                         tools:ignore="ContentDescription" />
 
