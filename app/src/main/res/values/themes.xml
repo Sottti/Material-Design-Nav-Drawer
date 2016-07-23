@@ -10,7 +10,6 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
-    <style name="AppTheme.WithNavDrawer">
-    </style>
+    <style name="AppTheme.WithNavDrawer"/>
 
 </resources>

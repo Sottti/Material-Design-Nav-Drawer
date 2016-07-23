@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_drawer_header"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.example.materialdesignnavigationdrawer.activities.MainActivity"
+    tools:showIn="@layout/navigation_drawer">
+
+    <FrameLayout
+        android:clickable="true"
+        android:foreground="@drawable/nav_drawer_header_foreground"
+        app:layout_aspectRatio="178%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/navigation_drawer_user_account_picture_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_nav_drawer_account_background"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_drawer_account_section"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing_8"
+        android:paddingEnd="@dimen/vertical_keyline_first"
+        android:paddingLeft="@dimen/vertical_keyline_first"
+        android:paddingRight="@dimen/vertical_keyline_first"
+        android:paddingStart="@dimen/vertical_keyline_first"
+        app:layout_aspectRatio="178%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/navigation_drawer_user_account_picture_profile"
+            android:layout_width="@dimen/nav_drawer_profile_image_size"
+            android:layout_height="@dimen/nav_drawer_profile_image_size"
+            app:srcCompat="@drawable/ic_account_circle_white_64dp"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_56"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/navigation_drawer_account_information_display_name"
+                style="@style/Body2.White.Primary"
+                android:text="@string/tools_text_account_information_username" />
+
+            <TextView
+                android:id="@+id/navigation_drawer_account_information_email"
+                style="@style/Body1.White.Primary"
+                android:text="@string/tools_text_account_information_email" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>

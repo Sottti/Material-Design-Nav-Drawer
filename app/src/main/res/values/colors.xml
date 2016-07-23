@@ -5,38 +5,48 @@
     <!-- App Main Palette -->
     <color name="primary">@color/blue_500</color>
     <color name="primaryDark">@color/blue_700</color>
-    <color name="textPrimary">@color/text_white_text_icons_100</color>
+    <color name="textPrimary">@color/icon_white_active</color>
 
     <!-- Text -->
-    <!-- Text -->
-    <color name="text_black_text_87">#DE000000</color>
-    <color name="text_black_secondary_icon_54">#8A000000</color>
-    <color name="text_black_divider_12">#1F000000</color>
+    <color name="text_black_primary">@color/black_87</color>
+    <color name="text_black_secondary">@color/black_54</color>
 
-    <color name="text_white_text_icons_100">#FFFFFF</color>
+    <color name="text_white_primary">@color/white</color>
+
+    <!--Dividers-->
+    <color name="divider_black">@color/black_12</color>
+
+    <!--Icons-->
+    <color name="icon_white_active">@color/white</color>
+    <color name="icon_active_black">@color/black_54</color>
 
     <!-- NavigationDrawer -->
-    <color name="navigation_drawer_background">#ffffffff</color>
-    <color name="nav_drawer_item_icon_normal">@color/text_black_secondary_icon_54</color>
+    <color name="navigation_drawer_background">@color/white</color>
+    <color name="nav_drawer_item_icon_default">@color/icon_active_black</color>
     <color name="nav_drawer_item_icon_selected">@color/blue_500</color>
     <color name="nav_drawer_item_text_selected">@color/blue_500</color>
-    <color name="nav_drawer_section_subheader">@color/text_black_secondary_icon_54</color>
+    <color name="nav_drawer_section_subheader">@color/black_54</color>
     <color name="nav_drawer_inset_foreground">#4000</color>
 
-    <color name="nav_drawer_row_item_unselected">@color/white</color>
-    <color name="nav_drawer_row_item_selected">@color/grey_200</color>
-    <color name="nav_drawer_row_item_pressed">@color/grey_400</color>
+    <color name="nav_drawer_row_default">@color/white</color>
+    <color name="nav_drawer_row_selected">@color/grey_200</color>
+    <color name="nav_drawer_row_pressed">@color/grey_400</color>
 
     <!-- Grey -->
-    <color name="grey_200">#eeeeee</color>
-    <color name="grey_400">#bdbdbd</color>
+    <color name="grey_200">#EEE</color>
+    <color name="grey_400">#BDBDBD</color>
 
     <!-- Blue -->
     <color name="blue_500">#2196f3</color>
     <color name="blue_700">#1976D2</color>
 
     <!-- Black and White -->
-    <color name="white">#FFFFFF</color>
-    <color name="black_alpha_50">#80000000</color>
+    <color name="white">#FFF</color>
+    <color name="black_alpha_40">#66000000</color>
+    <color name="black_alpha_60">#99000000</color>
+
+    <color name="black_87">#DE000000</color>
+    <color name="black_54">#8A000000</color>
+    <color name="black_12">#1F000000</color>
 
 </resources>

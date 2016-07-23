@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_pressed="true"
+        android:drawable="@color/nav_drawer_row_pressed" />
+
+    <item
+        android:state_selected="true"
+        android:drawable="@color/nav_drawer_row_selected" />
+
+    <item
+        android:drawable="@color/nav_drawer_row_default"/>
+
+</selector>

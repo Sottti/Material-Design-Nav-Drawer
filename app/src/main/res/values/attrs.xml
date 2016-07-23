@@ -4,7 +4,7 @@
 
     <!--Scrim insets vie that allows the drawer the be behind the status bar and visible -->
     <declare-styleable name="ScrimInsetsView">
-        <attr name="insetForeground" format="reference|color" />
+        <attr name="appInsetForeground" format="reference|color" />
     </declare-styleable>
 
 </resources>

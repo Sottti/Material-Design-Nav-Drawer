@@ -7,5 +7,5 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
-    tools:context="com.example.materialdesignnavigationdrawer.activities.MainActivity"
-    tools:layout_marginTop="24dp" />
+    android:elevation="@dimen/elevation_app_bar"
+    tools:context="com.example.materialdesignnavigationdrawer.activities.MainActivity" />

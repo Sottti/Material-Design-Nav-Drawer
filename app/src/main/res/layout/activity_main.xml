@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/toolbar"/>
+        <include layout="@layout/toolbar"/>
 
         <FrameLayout
             android:id="@+id/main_activity_content_frame"
@@ -24,7 +23,6 @@
     </LinearLayout>
 
     <!-- The navigation drawer -->
-    <include
-        layout="@layout/navigation_drawer"/>
+    <include layout="@layout/navigation_drawer"/>
 
 </android.support.v4.widget.DrawerLayout>

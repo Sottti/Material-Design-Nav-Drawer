@@ -1,4 +1,4 @@
-package com.sottocorp.materialdesignnavdrawer.customViews;
+package com.example.materialdesignnavigationdrawer.customViews;
 
 /*
  * Copyright 2014 Google Inc.
@@ -24,17 +24,18 @@ import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.sottocorp.materialdesignnavdrawer.R;
+import com.example.materialdesignnavdrawer.R;
 
 /**
  * A layout that draws something in the insets passed to {@link #fitSystemWindows(Rect)}, i.e. the area above UI chrome
  * (status and navigation bars, overlay action bars).
  */
+@Deprecated
 public class ScrimInsetsFrameLayout extends FrameLayout {
     private Drawable mInsetForeground;
 
     private Rect mInsets;
-    private final Rect mTempRect = new Rect();
+    private Rect mTempRect = new Rect();
     private OnInsetsCallback mOnInsetsCallback;
 
     public ScrimInsetsFrameLayout(Context context) {
@@ -58,7 +59,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         if (a == null) {
             return;
         }
-        mInsetForeground = a.getDrawable(R.styleable.ScrimInsetsView_insetForeground);
+        mInsetForeground = a.getDrawable(R.styleable.ScrimInsetsView_appInsetForeground);
         a.recycle();
 
         setWillNotDraw(true);
@@ -135,7 +136,7 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         mOnInsetsCallback = onInsetsCallback;
     }
 
-    public interface OnInsetsCallback {
-        void onInsetsChanged(Rect insets);
+    public static interface OnInsetsCallback {
+        public void onInsetsChanged(Rect insets);
     }
 }

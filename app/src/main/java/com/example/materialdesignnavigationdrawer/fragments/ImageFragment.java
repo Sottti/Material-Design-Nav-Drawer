@@ -1,31 +1,25 @@
-package com.sottocorp.materialdesignnavdrawer.fragments;
+package com.example.materialdesignnavigationdrawer.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import com.sottocorp.materialdesignnavdrawer.R;
+import com.example.materialdesignnavdrawer.R;
 
-/**
- * Fragment showing a solid background color
- */
 public class ImageFragment extends Fragment
 {
     public static final String sARGUMENT_IMAGE_CODE = "image";
 
-    public static ImageFragment newInstance(Bundle bundle)
+    public static ImageFragment newInstance(@NonNull final Bundle bundle)
     {
         final ImageFragment imageFragment = new ImageFragment();
-
-        if (bundle != null)
-        {
-            imageFragment.setArguments(bundle);
-        }
-
+        imageFragment.setArguments(bundle);
         return imageFragment;
     }
 
@@ -37,30 +31,26 @@ public class ImageFragment extends Fragment
             @Nullable Bundle savedInstanceState
     )
     {
-        // The last two arguments ensure LayoutParams are inflated properly
         final View view = inflater.inflate(R.layout.image_fragment, container, false);
-        initialise(view);
+        init(view);
 
         return view;
     }
 
-    /**
-     * Creates, binds and sets up the resources
-     *
-     * @param view is the view to get the bindings, context...
-     */
-    private void initialise(@NonNull final View view)
+    private void init(@NonNull final View view)
     {
+        final ImageView imageView = (ImageView) view.findViewById(R.id.image);
+
         switch (getArguments().getInt(sARGUMENT_IMAGE_CODE))
         {
             case 0:
-                view.findViewById(R.id.neo).setVisibility(View.VISIBLE);
-                view.findViewById(R.id.morpheo).setVisibility(View.GONE);
+                imageView.setImageDrawable
+                        (ContextCompat.getDrawable(getActivity(), R.drawable.neo));
                 break;
 
             case 1:
-                view.findViewById(R.id.neo).setVisibility(View.GONE);
-                view.findViewById(R.id.morpheo).setVisibility(View.VISIBLE);
+                imageView.setImageDrawable
+                        (ContextCompat.getDrawable(getActivity(), R.drawable.morpheus));
                 break;
 
         }

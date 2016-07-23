@@ -7,18 +7,11 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/neo"
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/neo"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/neo" />
 
-    <ImageView
-        android:id="@+id/morpheo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/morpheus"
-        tools:ignore="ContentDescription" />
 </FrameLayout>

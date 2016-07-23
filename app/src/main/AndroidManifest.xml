@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sottocorp.materialdesignnavdrawer" >
+    package="com.example.materialdesignnavdrawer" >
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name="com.sottocorp.materialdesignnavdrawer.activities.MainActivity"
+            android:name="com.example.materialdesignnavigationdrawer.activities.MainActivity"
             android:theme="@style/AppTheme.WithNavDrawer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,19 +19,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.AccountActivity"
+        <activity android:name="com.example.materialdesignnavigationdrawer.activities.AccountActivity"
             android:label="@string/toolbar_title_account"
-            android:parentActivityName="com.sottocorp.materialdesignnavdrawer.activities.MainActivity">
+            android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity">
         </activity>
 
-        <activity android:name=".activities.HelpAndFeedbackActivity"
+        <activity android:name="com.example.materialdesignnavigationdrawer.activities.HelpAndFeedbackActivity"
             android:label="@string/toolbar_title_help_and_feedback"
-            android:parentActivityName="com.sottocorp.materialdesignnavdrawer.activities.MainActivity">
+            android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity">
         </activity>
 
-        <activity android:name=".activities.AboutActivity"
+        <activity android:name="com.example.materialdesignnavigationdrawer.activities.AboutActivity"
             android:label="@string/toolbar_title_about"
-            android:parentActivityName="com.sottocorp.materialdesignnavdrawer.activities.MainActivity">
+            android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity">
         </activity>
 
     </application>

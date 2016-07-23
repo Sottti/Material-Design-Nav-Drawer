@@ -3,13 +3,23 @@
 <resources>
 
     <!-- Text -->
-    <style name="NavDrawerRowItemText" parent="TextAppearance.AppCompat.Body2">
+    <style name="NavDrawerRowText" parent="TextAppearance.AppCompat.Body2">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">@color/nav_drawer_item_main_text</item>
         <item name="android:layout_gravity">start|center_vertical</item>
-        <item name="android:layout_marginLeft">@dimen/nav_drawer_vertical_keyline_text_left</item>
-        <item name="android:layout_marginStart">@dimen/nav_drawer_vertical_keyline_text_left</item>
+        <item name="android:layout_marginLeft">@dimen/vertical_keyline_second</item>
+        <item name="android:layout_marginStart">@dimen/vertical_keyline_second</item>
+    </style>
+
+    <!-- ScrimInsetLayout -->
+    <style name="ScrimInsetsLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:elevation">@dimen/elevation_nav_drawer</item>
+        <item name="appInsetForeground">@color/nav_drawer_inset_foreground</item>
     </style>
 
 </resources>

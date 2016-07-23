@@ -6,5 +6,5 @@
     <item android:color="@color/nav_drawer_item_icon_selected"
         android:state_selected="true" />
 
-    <item android:color="@color/nav_drawer_item_icon_normal"/>
+    <item android:color="@color/nav_drawer_item_icon_default"/>
 </selector>

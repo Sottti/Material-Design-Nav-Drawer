@@ -1,20 +1,22 @@
 <resources>
 
     <!-- Navigation Drawer -->
-    <dimen name="navigation_drawer_max_width">320dp</dimen>
+    <dimen name="navigation_drawer_max_width">280dp</dimen>
 
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_48">48dp</dimen>
+    <dimen name="spacing_56">56dp</dimen>
+    <dimen name="icon_size_24">24dp</dimen>
+    <dimen name="vertical_keyline_first">16dp</dimen>
+    <dimen name="vertical_keyline_second">72dp</dimen>
+    <dimen name="spacing_listing_divider_top">8dp</dimen>
     <dimen name="nav_drawer_profile_image_size">64dp</dimen>
+    <dimen name="vertical_spacing_listing_divider_bottom">8dp</dimen>
     <dimen name="nav_drawer_account_section_default_height">164dp</dimen>
-    <dimen name="nav_drawer_vertical_keyline_icon_left">16dp</dimen>
-    <dimen name="nav_drawer_vertical_keyline_text_left">72dp</dimen>
-    <dimen name="nav_drawer_vertical_keyline_right">16dp</dimen>
-    <dimen name="nav_drawer_item_row_icon_size">24dp</dimen>
-    <dimen name="nav_drawer_vertical_spacing_listing">8dp</dimen>
-    <dimen name="nav_drawer_vertical_spacing_listing_divider_top">7dp</dimen>
-    <dimen name="nav_drawer_vertical_spacing_listing_divider_bottom">8dp</dimen>
-    <dimen name="nav_drawer_subheader_height">48dp</dimen>
 
-    <dimen name="text_size_14">14sp</dimen>
     <dimen name="divider_height">1dp</dimen>
+    <dimen name="elevation_app_bar">4dp</dimen>
+    <dimen name="elevation_nav_drawer">16dp</dimen>
 
 </resources>
