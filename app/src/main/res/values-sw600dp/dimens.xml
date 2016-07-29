@@ -4,6 +4,5 @@
     <dimen name="navigation_drawer_max_width">320dp</dimen>
 
     <dimen name="vertical_keyline_first">24dp</dimen>
-    <dimen name="vertical_keyline_second">80dp</dimen>
 
 </resources>

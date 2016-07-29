@@ -7,10 +7,10 @@
     android:id="@+id/navigation_drawer_header"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.example.materialdesignnavigationdrawer.activities.MainActivity"
-    tools:showIn="@layout/navigation_drawer">
+    tools:context="com.example.materialdesignnavigationdrawer.activities.MainActivity">
 
     <FrameLayout
+        android:id="@+id/navigation_drawer_header_clickable"
         android:clickable="true"
         android:foreground="@drawable/nav_drawer_header_foreground"
         app:layout_aspectRatio="178%"

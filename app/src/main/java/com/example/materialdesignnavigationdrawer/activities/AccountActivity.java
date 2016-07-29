@@ -18,6 +18,11 @@ public class AccountActivity extends AppCompatActivity
 
     private void init()
     {
+        setUpToolbar();
+    }
+
+    private void setUpToolbar()
+    {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
