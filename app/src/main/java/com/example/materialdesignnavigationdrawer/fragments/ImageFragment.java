@@ -14,6 +14,8 @@ import com.example.materialdesignnavdrawer.R;
 
 public class ImageFragment extends Fragment
 {
+    public static final int sIMAGE_NEO = 0;
+    public static final int sIMAGE_MORPHEUS = 1;
     public static final String sARGUMENT_IMAGE_CODE = "image";
 
     public static ImageFragment newInstance(@NonNull final Bundle bundle)

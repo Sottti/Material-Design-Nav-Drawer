@@ -3,11 +3,10 @@
 <resources>
 
     <style
-        name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="android:textColorPrimary">@color/textPrimary</item>
-        <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme.WithNavDrawer"/>

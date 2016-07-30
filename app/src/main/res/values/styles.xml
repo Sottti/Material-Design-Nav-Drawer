@@ -45,19 +45,11 @@
     <!-- Material Design Navigation Drawer -->
     <style name="NavDrawerRowLayout">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_height">@dimen/spacing_48</item>
         <item name="android:background">@drawable/nav_drawer_row_background</item>
         <item name="android:gravity">start|center_vertical</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:clickable">true</item>
-    </style>
-
-    <style name="NavDrawerRowLayout.Main">
-        <item name="android:tag">@string/tag_nav_drawer_main_entry</item>
-    </style>
-
-    <style name="NavDrawerRowLayout.Secondary">
-        <item name="android:tag">@string/tag_nav_drawer_special_entry</item>
     </style>
 
     <style name="NavDrawerRowItemIcon">

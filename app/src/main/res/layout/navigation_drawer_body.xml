@@ -14,7 +14,7 @@
 
     <FrameLayout
         android:id="@+id/navigation_drawer_items_list_linearLayout_home"
-        style="@style/NavDrawerRowLayout.Main"
+        style="@style/NavDrawerRowLayout"
         tools:background="@color/nav_drawer_row_selected">
 
         <ImageView
@@ -34,7 +34,7 @@
 
     <FrameLayout
         android:id="@+id/navigation_drawer_items_list_linearLayout_explore"
-        style="@style/NavDrawerRowLayout.Main">
+        style="@style/NavDrawerRowLayout">
 
         <ImageView
             android:id="@+id/navigation_drawer_items_list_icon_explore"
@@ -54,7 +54,7 @@
 
     <FrameLayout
         android:id="@+id/navigation_drawer_items_list_linearLayout_help_and_feedback"
-        style="@style/NavDrawerRowLayout.Secondary">
+        style="@style/NavDrawerRowLayout">
 
         <ImageView
             android:id="@+id/navigation_drawer_items_list_icon_help_and_feedback"
@@ -72,7 +72,7 @@
 
     <FrameLayout
         android:id="@+id/navigation_drawer_items_list_linearLayout_about"
-        style="@style/NavDrawerRowLayout.Secondary">
+        style="@style/NavDrawerRowLayout">
 
         <ImageView
             android:id="@+id/navigation_drawer_items_list_icon_about"

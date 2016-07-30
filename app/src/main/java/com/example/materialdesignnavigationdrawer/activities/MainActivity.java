@@ -6,8 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.percent.PercentRelativeLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.GravityCompat;
@@ -27,10 +27,10 @@ import com.example.materialdesignnavigationdrawer.utils.UtilsMiscellaneous;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    public static final int sDELAY_MILLIS = 300;
-
-    private static final int sIMAGE_NEO = 0;
-    private static final int sIMAGE_MORPHEUS = 1;
+    private final static String sKEY_SAVED_POSITION = "savedPosition";
+    private final static int sPOSITION_HOME = 0;
+    private final static int sPOSITION_EXPLORE = 1;
+    private static final int sDELAY_MILLIS = 250;
 
     private Toolbar mToolbar;
     private Context mContext;
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mExploreIcon;
     private FrameLayout mAccountRow;
     private DrawerLayout mDrawerLayout;
+    private int mCurrentPosition = sPOSITION_HOME;
     private ScrimInsetsFrameLayout mScrimInsetsFrameLayout;
     private FrameLayout mHomeRow, mExploreRow, mHelpAndFeedbackRow, mAboutRow;
 
@@ -46,26 +47,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
+        init(savedInstanceState);
     }
 
-    private void init()
+    private void init(@NonNull final Bundle savedInstanceState)
     {
         bindResources();
         setUpToolbar();
         setUpIcons();
         setUpDrawer();
-        setUpDefaultPosition();
+        restoreState(savedInstanceState);
     }
 
     private void bindResources()
     {
         mContext = this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mAccountRow = (FrameLayout) findViewById
-                (R.id.navigation_drawer_header);
-        mHomeRow = (FrameLayout) findViewById
-                (R.id.navigation_drawer_items_list_linearLayout_home);
+        mAccountRow = (FrameLayout) findViewById(R.id.navigation_drawer_header);
+        mHomeRow = (FrameLayout) findViewById(R.id.navigation_drawer_items_list_linearLayout_home);
         mExploreRow = (FrameLayout) findViewById
                 (R.id.navigation_drawer_items_list_linearLayout_explore);
         mHelpAndFeedbackRow = (FrameLayout) findViewById
@@ -104,6 +103,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setUpDrawer()
     {
+        setUpDrawerAffordance();
+        setUpDrawerMaxWidth();
+        setUpDrawerClickListeners();
+    }
+
+    private void setUpDrawerAffordance()
+    {
         final ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle
                 (
                         this,
@@ -122,9 +128,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
 
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
-
         actionBarDrawerToggle.syncState();
+    }
 
+    private void setUpDrawerClickListeners()
+    {
+        mAccountRow.setOnClickListener(this);
+        mHomeRow.setOnClickListener(this);
+        mExploreRow.setOnClickListener(this);
+        mHelpAndFeedbackRow.setOnClickListener(this);
+        mAboutRow.setOnClickListener(this);
+    }
+
+    private void setUpDrawerMaxWidth()
+    {
         final int probableMinDrawerWidth = UtilsDevice.getScreenWidthInPx(this) -
                 UtilsMiscellaneous.getThemeAttributeDimensionSize(this, android.R.attr.actionBarSize);
 
@@ -133,19 +150,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mScrimInsetsFrameLayout.getLayoutParams().width =
                 Math.min(probableMinDrawerWidth, maxDrawerWidth);
-
-        mAccountRow.setOnClickListener(this);
-        mHomeRow.setOnClickListener(this);
-        mExploreRow.setOnClickListener(this);
-        mHelpAndFeedbackRow.setOnClickListener(this);
-        mAboutRow.setOnClickListener(this);
-    }
-
-    private void setUpDefaultPosition()
-    {
-        setToolbarTitle(R.string.toolbar_title_home);
-        mHomeRow.setSelected(true);
-        showImageFragment(sIMAGE_NEO);
     }
 
     @Override
@@ -163,17 +167,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 if (view == mHomeRow)
                 {
-                    deselectRows();
-                    view.setSelected(true);
-                    setToolbarTitle(R.string.toolbar_title_home);
-                    showImageFragment(sIMAGE_NEO);
+                    selectHomeFragment();
                 }
                 else if (view == mExploreRow)
                 {
-                    deselectRows();
-                    view.setSelected(true);
-                    setToolbarTitle(R.string.toolbar_title_explore);
-                    showImageFragment(sIMAGE_MORPHEUS);
+                    selectExploreFragment();
                 }
                 else if (view == mHelpAndFeedbackRow)
                 {
@@ -185,6 +183,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+    }
+
+    private void restoreState(final @Nullable Bundle savedInstanceState)
+    {
+        // This allow us to know if the activity was recreated
+        // after orientation change and restore the Toolbar title
+        if (savedInstanceState != null)
+        {
+            switch (savedInstanceState.getInt(sKEY_SAVED_POSITION, sPOSITION_HOME))
+            {
+                case sPOSITION_HOME:
+                    selectHomeFragment();
+                    break;
+
+                default:
+                    selectExploreFragment();
+                    break;
+
+            }
+        }
+        else
+        {
+            selectHomeFragment();
+        }
+    }
+
+    private void selectHomeFragment()
+    {
+        mCurrentPosition = sPOSITION_HOME;
+        deselectRows();
+        mHomeRow.setSelected(true);
+        setToolbarTitle(R.string.toolbar_title_home);
+        showImageFragment(ImageFragment.sIMAGE_NEO);
+    }
+
+    private void selectExploreFragment()
+    {
+        mCurrentPosition = sPOSITION_EXPLORE;
+        deselectRows();
+        mExploreRow.setSelected(true);
+        setToolbarTitle(R.string.toolbar_title_explore);
+        showImageFragment(ImageFragment.sIMAGE_MORPHEUS);
     }
 
     private void showImageFragment(final int imageCode)
@@ -246,5 +286,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         mHomeRow.setSelected(false);
         mExploreRow.setSelected(false);
+    }
+
+    @Override
+    protected void onSaveInstanceState(final Bundle outState)
+    {
+        outState.putInt(sKEY_SAVED_POSITION, mCurrentPosition);
+        super.onSaveInstanceState(outState);
     }
 }

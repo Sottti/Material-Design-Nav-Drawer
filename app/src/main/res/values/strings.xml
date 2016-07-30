@@ -16,8 +16,6 @@
     <string name="nav_drawer_about">About</string>
     <string name="navigation_drawer_opened">The navigation drawer is opened</string>
     <string name="navigation_drawer_closed">The navigation drawer is closed</string>
-    <string name="tag_nav_drawer_main_entry">nav_drawer_main_entry</string>
-    <string name="tag_nav_drawer_special_entry">nav_drawer_special_entry</string>
     <string name="tools_text_account_information_username">Sotti</string>
     <string name="tools_text_account_information_email">sotti@sottocorp.com</string>
 
