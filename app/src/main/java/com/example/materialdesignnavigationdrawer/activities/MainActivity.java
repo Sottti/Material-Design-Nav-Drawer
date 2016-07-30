@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Context mContext;
     private ImageView mHomeIcon;
     private ImageView mExploreIcon;
+    private FrameLayout mAccountRow;
     private DrawerLayout mDrawerLayout;
-    private PercentRelativeLayout mAccountRow;
     private ScrimInsetsFrameLayout mScrimInsetsFrameLayout;
     private FrameLayout mHomeRow, mExploreRow, mHelpAndFeedbackRow, mAboutRow;
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         mContext = this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mAccountRow = (PercentRelativeLayout) findViewById
+        mAccountRow = (FrameLayout) findViewById
                 (R.id.navigation_drawer_header);
         mHomeRow = (FrameLayout) findViewById
                 (R.id.navigation_drawer_items_list_linearLayout_home);
