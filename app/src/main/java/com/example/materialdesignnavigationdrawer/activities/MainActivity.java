@@ -22,7 +22,7 @@ import com.example.materialdesignnavigationdrawer.fragments.ImageFragment;
 public class MainActivity extends AppCompatActivity
 {
     private final static String sKEY_ACTIONBAR_TITLE = "actionBarTitle";
-    private static final int sDELAY_MILLIS = 300;
+    private static final int sDELAY_MILLIS = 250;
 
     private Toolbar mToolbar;
     private Context mContext;
