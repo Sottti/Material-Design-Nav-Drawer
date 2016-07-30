@@ -11,6 +11,6 @@ Check out these articles for further information.
 3. [Navigation Drawer: Navigating](https://goo.gl/wjT568)
 4. [Navigation Drawer: Navigation View] (Coming soon)
 
-![Screenshot](https://dl.dropboxusercontent.com/u/83259317/Images/NavDrawer%20-%20Using%20ADSL.png)
+![Screenshot](https://dl.dropboxusercontent.com/u/83259317/Images/NavDrawer%20-%20Not%20using%20ADSL.png)
 
 Thanks for reading.
