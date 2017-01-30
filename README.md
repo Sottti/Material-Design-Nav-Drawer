@@ -11,6 +11,6 @@ Check out these articles for further information.
 2. [Navigation Drawer: Styling](http://goo.gl/rTS3MF)
 3. [Navigation Drawer: Navigating](https://goo.gl/wjT568)
 
-![Screenshot](https://dl.dropboxusercontent.com/u/83259317/Images/NavDrawer%20-%20Not%20using%20ADSL.png)
+## License
 
-Thanks for reading.
+The contents of this repository are covered under the [MIT License](LICENSE).
