@@ -11,4 +11,6 @@ Check out these articles for further information.
 2. [Navigation Drawer: Styling](http://goo.gl/rTS3MF)
 3. [Navigation Drawer: Navigating](https://goo.gl/wjT568)
 
-Thanks for reading.
+## License
+
+The contents of this repository are covered under the [MIT License](LICENSE).
