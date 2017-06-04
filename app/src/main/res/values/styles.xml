@@ -1,26 +1,28 @@
 <resources>
 
-    <!-- Text -->
-    <style name="Body1" parent="TextAppearance.AppCompat.Body1">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-    </style>
+  <!-- Text -->
+  <style name="Body1" parent="TextAppearance.AppCompat.Body1">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+  </style>
 
-    <style name="Body2" parent="TextAppearance.AppCompat.Body2">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-    </style>
+  <style name="Body2" parent="TextAppearance.AppCompat.Body2">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+  </style>
 
-    <style name="Body1.White"/>
-    <style name="Body2.White"/>
-    <style name="Body2.Black"/>
+  <style name="Body1.White" />
 
-    <style name="Body1.White.Primary">
-        <item name="android:textColor">@color/text_white_primary</item>
-    </style>
+  <style name="Body2.White" />
 
-    <style name="Body2.White.Primary">
-        <item name="android:textColor">@color/text_white_primary</item>
-    </style>
+  <style name="Body2.Black" />
+
+  <style name="Body1.White.Primary">
+    <item name="android:textColor">@color/text_white_primary</item>
+  </style>
+
+  <style name="Body2.White.Primary">
+    <item name="android:textColor">@color/text_white_primary</item>
+  </style>
 
 </resources>

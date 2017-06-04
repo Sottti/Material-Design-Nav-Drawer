@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group
-        android:id="@+id/navigation_drawer_group_one"
-        android:checkableBehavior="single">
+  <group
+    android:id="@+id/navigation_drawer_group_one"
+    android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/navigation_view_item_home"
-            android:checked="true"
-            android:icon="@drawable/ic_home_white_24dp"
-            android:title="@string/nav_drawer_item_home"/>
+    <item
+      android:id="@+id/navigation_view_item_home"
+      android:checked="true"
+      android:icon="@drawable/ic_home_white_24dp"
+      android:title="@string/nav_drawer_item_home" />
 
-        <item
-            android:id="@+id/navigation_view_item_explore"
-            android:icon="@drawable/ic_explore_white_24dp"
-            android:title="@string/nav_drawer_item_explore"/>
-    </group>
+    <item
+      android:id="@+id/navigation_view_item_explore"
+      android:icon="@drawable/ic_explore_white_24dp"
+      android:title="@string/nav_drawer_item_explore" />
+  </group>
 
-    <group
-        android:id="@+id/navigation_drawer_group_two"
-        android:checkableBehavior="none">
-        <item
-            android:id="@+id/navigation_view_item_help"
-            android:icon="@drawable/ic_help_white_24dp"
-            android:title="@string/nav_drawer_help_and_feedback"/>
+  <group
+    android:id="@+id/navigation_drawer_group_two"
+    android:checkableBehavior="none">
+    <item
+      android:id="@+id/navigation_view_item_help"
+      android:icon="@drawable/ic_help_white_24dp"
+      android:title="@string/nav_drawer_help_and_feedback" />
 
-        <item
-            android:id="@+id/navigation_view_item_about"
-            android:icon="@drawable/ic_info_white_24dp"
-            android:title="@string/nav_drawer_about"/>
-    </group>
+    <item
+      android:id="@+id/navigation_view_item_about"
+      android:icon="@drawable/ic_info_white_24dp"
+      android:title="@string/nav_drawer_about" />
+  </group>
 
 </menu>

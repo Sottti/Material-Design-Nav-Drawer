@@ -2,13 +2,12 @@
 
 <resources>
 
-    <style
-        name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primaryDark</item>
-        <item name="android:textColorPrimary">@color/textPrimary</item>
-    </style>
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primaryDark</item>
+    <item name="android:textColorPrimary">@color/textPrimary</item>
+  </style>
 
-    <style name="AppTheme.WithNavDrawer"/>
+  <style name="AppTheme.WithNavDrawer" />
 
 </resources>
