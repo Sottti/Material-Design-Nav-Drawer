@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.materialdesignnavdrawer" >
+  package="com.example.materialdesignnavdrawer">
 
-    <application
-        android:allowBackup="true"
-        android:fullBackupContent="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+  <application
+    android:allowBackup="true"
+    android:fullBackupContent="false"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme">
 
-        <activity
-            android:name="com.example.materialdesignnavigationdrawer.activities.MainActivity"
-            android:theme="@style/AppTheme.WithNavDrawer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity
+      android:name="com.example.materialdesignnavigationdrawer.activities.MainActivity"
+      android:theme="@style/AppTheme.WithNavDrawer">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
 
-        <activity android:name="com.example.materialdesignnavigationdrawer.activities.AccountActivity"
-            android:label="@string/toolbar_title_account"
-            android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity">
-        </activity>
+    <activity
+      android:label="@string/toolbar_title_account"
+      android:name="com.example.materialdesignnavigationdrawer.activities.AccountActivity"
+      android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity"></activity>
 
-        <activity android:name="com.example.materialdesignnavigationdrawer.activities.HelpAndFeedbackActivity"
-            android:label="@string/toolbar_title_help_and_feedback"
-            android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity">
-        </activity>
+    <activity
+      android:label="@string/toolbar_title_help_and_feedback"
+      android:name="com.example.materialdesignnavigationdrawer.activities.HelpAndFeedbackActivity"
+      android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity"></activity>
 
-        <activity android:name="com.example.materialdesignnavigationdrawer.activities.AboutActivity"
-            android:label="@string/toolbar_title_about"
-            android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity">
-        </activity>
+    <activity
+      android:label="@string/toolbar_title_about"
+      android:name="com.example.materialdesignnavigationdrawer.activities.AboutActivity"
+      android:parentActivityName="com.example.materialdesignnavigationdrawer.activities.MainActivity"></activity>
 
-    </application>
+  </application>
 
 </manifest>

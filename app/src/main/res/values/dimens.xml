@@ -1,19 +1,19 @@
 <resources>
 
-    <!-- Navigation Drawer -->
-    <dimen name="navigation_drawer_max_width">280dp</dimen>
+  <!-- Navigation Drawer -->
+  <dimen name="navigation_drawer_max_width">280dp</dimen>
 
-    <dimen name="spacing_8">8dp</dimen>
-    <dimen name="spacing_48">48dp</dimen>
-    <dimen name="spacing_56">56dp</dimen>
-    <dimen name="vertical_keyline_first">16dp</dimen>
-    <dimen name="vertical_keyline_second">72dp</dimen>
-    <dimen name="spacing_listing_divider_top">8dp</dimen>
-    <dimen name="nav_drawer_profile_image_size">64dp</dimen>
-    <dimen name="vertical_spacing_listing_divider_bottom">8dp</dimen>
+  <dimen name="spacing_8">8dp</dimen>
+  <dimen name="spacing_48">48dp</dimen>
+  <dimen name="spacing_56">56dp</dimen>
+  <dimen name="vertical_keyline_first">16dp</dimen>
+  <dimen name="vertical_keyline_second">72dp</dimen>
+  <dimen name="spacing_listing_divider_top">8dp</dimen>
+  <dimen name="nav_drawer_profile_image_size">64dp</dimen>
+  <dimen name="vertical_spacing_listing_divider_bottom">8dp</dimen>
 
-    <dimen name="divider_height">1dp</dimen>
-    <dimen name="elevation_app_bar">4dp</dimen>
-    <dimen name="elevation_nav_drawer">16dp</dimen>
+  <dimen name="divider_height">1dp</dimen>
+  <dimen name="elevation_app_bar">4dp</dimen>
+  <dimen name="elevation_nav_drawer">16dp</dimen>
 
 </resources>

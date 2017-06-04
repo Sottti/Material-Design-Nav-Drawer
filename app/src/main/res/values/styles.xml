@@ -1,62 +1,64 @@
 <resources>
 
-    <!-- Text -->
-    <style name="Body1" parent="TextAppearance.AppCompat.Body1">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-    </style>
+  <!-- Text -->
+  <style name="Body1" parent="TextAppearance.AppCompat.Body1">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+  </style>
 
-    <style name="Body2" parent="TextAppearance.AppCompat.Body2">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-    </style>
+  <style name="Body2" parent="TextAppearance.AppCompat.Body2">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+  </style>
 
-    <style name="Body1.White"/>
-    <style name="Body2.White"/>
-    <style name="Body2.Black"/>
+  <style name="Body1.White" />
 
-    <style name="Body1.White.Primary">
-        <item name="android:textColor">@color/text_white_primary</item>
-    </style>
+  <style name="Body2.White" />
 
-    <style name="Body2.White.Primary">
-        <item name="android:textColor">@color/text_white_primary</item>
-    </style>
+  <style name="Body2.Black" />
 
-    <style name="Body2.Black.Primary">
-        <item name="android:textColor">@color/text_black_primary</item>
-    </style>
+  <style name="Body1.White.Primary">
+    <item name="android:textColor">@color/text_white_primary</item>
+  </style>
 
-    <style name="NavDrawerRowText" parent="Body2.Black.Primary">
-        <item name="android:textColor">@color/nav_drawer_item_main_text</item>
-        <item name="android:layout_gravity">start|center_vertical</item>
-        <item name="android:layout_marginLeft">@dimen/vertical_keyline_second</item>
-    </style>
+  <style name="Body2.White.Primary">
+    <item name="android:textColor">@color/text_white_primary</item>
+  </style>
 
-    <!-- ScrimInsetLayout -->
-    <style name="ScrimInsetsLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:fitsSystemWindows">true</item>
-        <item name="android:layout_gravity">start</item>
-        <item name="appInsetForeground">@color/nav_drawer_inset_foreground</item>
-    </style>
+  <style name="Body2.Black.Primary">
+    <item name="android:textColor">@color/text_black_primary</item>
+  </style>
 
-    <!-- Material Design Navigation Drawer -->
-    <style name="NavDrawerRowLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/spacing_48</item>
-        <item name="android:background">@drawable/nav_drawer_row_background</item>
-        <item name="android:gravity">start|center_vertical</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:clickable">true</item>
-    </style>
+  <style name="NavDrawerRowText" parent="Body2.Black.Primary">
+    <item name="android:textColor">@color/nav_drawer_item_main_text</item>
+    <item name="android:layout_gravity">start|center_vertical</item>
+    <item name="android:layout_marginLeft">@dimen/vertical_keyline_second</item>
+  </style>
 
-    <style name="NavDrawerRowItemIcon">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:layout_marginLeft">@dimen/vertical_keyline_first</item>
-    </style>
+  <!-- ScrimInsetLayout -->
+  <style name="ScrimInsetsLayout">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:fitsSystemWindows">true</item>
+    <item name="android:layout_gravity">start</item>
+    <item name="appInsetForeground">@color/nav_drawer_inset_foreground</item>
+  </style>
+
+  <!-- Material Design Navigation Drawer -->
+  <style name="NavDrawerRowLayout">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/spacing_48</item>
+    <item name="android:background">@drawable/nav_drawer_row_background</item>
+    <item name="android:gravity">start|center_vertical</item>
+    <item name="android:orientation">horizontal</item>
+    <item name="android:clickable">true</item>
+  </style>
+
+  <style name="NavDrawerRowItemIcon">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_gravity">center_vertical</item>
+    <item name="android:layout_marginLeft">@dimen/vertical_keyline_first</item>
+  </style>
 
 </resources>
