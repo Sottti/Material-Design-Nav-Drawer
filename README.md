@@ -84,6 +84,15 @@ builds.
 ./gradlew :app:installDebug
 ```
 
+## Verification
+
+No automated test suite is included in this historical sample. The practical
+sanity check is to build the debug app:
+
+```bash
+./gradlew :app:assembleDebug
+```
+
 ## Status
 
 This is a historical sample, not a modern AndroidX/Material Components app. Its
