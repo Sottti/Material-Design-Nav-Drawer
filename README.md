@@ -15,12 +15,6 @@ toolbar with a drawer affordance, a branded drawer header, grouped menu items,
 checked navigation state, delayed content changes while the drawer closes, and
 secondary Account, Help, and About screens.
 
-## Preview Assets
-
-| Drawer Header | Sample Content |
-| --- | --- |
-| <img width="260" alt="Navigation drawer account header background" src="app/src/main/res/drawable-nodpi/image_nav_drawer_account_background.jpg" /> | <img width="260" alt="Neo sample content image used by the drawer demo" src="app/src/main/res/drawable-nodpi/Neo.jpg" /> |
-
 ## What It Demonstrates
 
 - `DrawerLayout` as the root layout for content plus drawer.
