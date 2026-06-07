@@ -1,16 +1,96 @@
 # Material Design Navigation Drawer
 
-This is a sample app about how to implement the [Navigation Drawer following the Material Design guidelines](https://goo.gl/qpKNsR).
+![Java](https://img.shields.io/badge/Java-Android-007396?logo=openjdk&logoColor=white)
+![Android](https://img.shields.io/badge/Android%20Support-25.3.1-3DDC84?logo=android&logoColor=white)
+![Material](https://img.shields.io/badge/Material%20Design-navigation%20drawer-4285F4)
+![Status](https://img.shields.io/badge/status-historical%20sample-FFB000)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-This implementation uses the [Navigation View](https://goo.gl/XwIo9D) from the [Design Support Library](http://goo.gl/GgLTjB).
-For an implementation that does NOT use [Design Support Library](http://goo.gl/GgLTjB) check out [this branch](https://goo.gl/etnw5Q)
+A small Java Android sample showing how to build a Material Design navigation
+drawer with `DrawerLayout`, `NavigationView`, AppCompat, and the Android Design
+Support Library.
 
-Check out these articles for further information.
+The app demonstrates the classic pre-AndroidX navigation drawer pattern: a
+toolbar with a drawer affordance, a branded drawer header, grouped menu items,
+checked navigation state, delayed content changes while the drawer closes, and
+secondary Account, Help, and About screens.
 
-1. [Navigation Drawer: Sizing](http://goo.gl/Zc3kMT)
-2. [Navigation Drawer: Styling](http://goo.gl/rTS3MF)
-3. [Navigation Drawer: Navigating](https://goo.gl/wjT568)
+## Preview Assets
+
+| Drawer Header | Sample Content |
+| --- | --- |
+| <img width="260" alt="Navigation drawer account header background" src="app/src/main/res/drawable-nodpi/image_nav_drawer_account_background.jpg" /> | <img width="260" alt="Neo sample content image used by the drawer demo" src="app/src/main/res/drawable-nodpi/Neo.jpg" /> |
+
+## What It Demonstrates
+
+- `DrawerLayout` as the root layout for content plus drawer.
+- `NavigationView` with a header layout and menu resource.
+- AppCompat `Toolbar` configured as the activity action bar.
+- Home/up affordance opening the drawer from the toolbar.
+- Checked single-selection drawer items for primary destinations.
+- Non-checkable drawer actions for Help and About.
+- Fragment replacement after a short delay to avoid jank while closing the
+  drawer.
+- State restoration for the toolbar title after configuration changes.
+- Alternative branches comparing Design Support Library and manual
+  implementations.
+
+## App Flow
+
+```mermaid
+flowchart LR
+    A["Toolbar menu icon"] --> B["DrawerLayout opens"]
+    B --> C["NavigationView item"]
+    C --> D{"Destination type"}
+    D --> E["Replace ImageFragment"]
+    D --> F["Launch secondary Activity"]
+    E --> G["Update toolbar title"]
+```
+
+## Branches
+
+| Branch | Approach |
+| --- | --- |
+| [`using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/using_design_support_library) | Default branch using `NavigationView` from the Design Support Library. |
+| [`not_using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/not_using_design_support_library) | Older/manual drawer implementation without `NavigationView`. |
+
+## Project Shape
+
+| Area | Files |
+| --- | --- |
+| Main drawer screen | `MainActivity.java`, `main_activity.xml`, `navigation_drawer_body.xml`, `navigation_drawer_header.xml` |
+| Content switching | `ImageFragment.java` |
+| Secondary screens | `AccountActivity.java`, `HelpAndFeedbackActivity.java`, `AboutActivity.java` |
+| Styling | `themes.xml`, `styles.xml`, `colors.xml`, `dimens.xml`, vector drawables |
+
+## Tech Stack
+
+- Java
+- Android Gradle Plugin 3.0.0 alpha03
+- Gradle 4.0 milestone 2
+- compile SDK 25, target SDK 25, min SDK 16
+- Android Support Library 25.3.1
+- AppCompat, Design Support Library, Percent Support Library
+- XML layouts and vector drawables
+
+## Run It
+
+This repo is pinned to 2017 Android tooling. For the least friction, use an
+Android Studio/JDK setup compatible with AGP 3.0 alpha and Gradle 4 milestone
+builds.
+
+```bash
+./gradlew :app:assembleDebug
+./gradlew :app:installDebug
+```
+
+## Status
+
+This is a historical sample, not a modern AndroidX/Material Components app. Its
+value today is as a compact reference for how the Design Support Library era
+implemented Material navigation drawers.
 
 ## License
 
-The contents of this repository are covered under the [MIT License](LICENSE).
+The original README declared this repository to be MIT licensed. A standalone
+`LICENSE` file is not currently present in the repository.
