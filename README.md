@@ -1,9 +1,13 @@
 # Material Design Navigation Drawer
 
+> **Article companion — inactive.** This repository contains the sample code for
+> [Material Design Navigation Drawer series](https://medium.com/android-news/navigation-drawer-styling-according-material-design-5306190da08f) on Medium.
+> It is preserved for reference and is not under active development.
+
 ![Java](https://img.shields.io/badge/Java-Android-007396?logo=openjdk&logoColor=white)
 ![Android](https://img.shields.io/badge/Android%20Support-25.3.1-3DDC84?logo=android&logoColor=white)
 ![Material](https://img.shields.io/badge/Material%20Design-navigation%20drawer-4285F4)
-![Status](https://img.shields.io/badge/status-historical%20sample-FFB000)
+![Status](https://img.shields.io/badge/status-inactive%20article%20companion-FFB000)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 A small Java Android sample showing how to build a Material Design navigation
@@ -33,7 +37,7 @@ secondary Account, Help, and About screens.
 
 | Branch | Approach |
 | --- | --- |
-| [`using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/using_design_support_library) | Default branch using `NavigationView` from the Design Support Library. |
+| [`using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/using_design_support_library) | Design Support Library implementation using `NavigationView`. |
 | [`not_using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/not_using_design_support_library) | Older/manual drawer implementation without `NavigationView`. |
 
 ## ⚙️ Tech Stack
