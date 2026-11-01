@@ -1,5 +1,9 @@
 # Material Design Navigation Drawer
 
+> **Article companion — inactive.** This repository contains the sample code for
+> [Material Design Navigation Drawer series](https://medium.com/android-news/navigation-drawer-styling-according-material-design-5306190da08f) on Medium.
+> It is preserved for reference and is not under active development.
+
 App sample about how to implement the [Navigation Drawer following the Material Design guidelines](https://goo.gl/qpKNsR).
 
 This implementation is older that the [Design Support Library](http://goo.gl/GgLTjB) so does NOT use it.
