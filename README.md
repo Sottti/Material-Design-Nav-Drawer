@@ -52,9 +52,11 @@ secondary Account, Help, and About screens.
 
 ## 🚀 Run It
 
-This repo is pinned to 2017 Android tooling. For the least friction, use an
-Android Studio/JDK setup compatible with AGP 3.0 alpha and Gradle 4 milestone
-builds.
+This repo is pinned to 2017 Android tooling. Use **JDK 8**, Android SDK Platform
+25, and Android SDK Build Tools 25.0.3. Point `JAVA_HOME` at JDK 8 and set
+`ANDROID_HOME` to your SDK installation (or configure `sdk.dir` in your local
+`local.properties`). The Gradle wrapper downloads the original Gradle version;
+it is not compatible with current JDK releases.
 
 ```bash
 ./gradlew :app:assembleDebug
