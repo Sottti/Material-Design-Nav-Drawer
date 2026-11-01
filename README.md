@@ -37,7 +37,7 @@ secondary Account, Help, and About screens.
 
 | Branch | Approach |
 | --- | --- |
-| [`using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/using_design_support_library) | Design Support Library implementation using `NavigationView`. |
+| [`develop`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/develop) | Design Support Library implementation using `NavigationView`. |
 | [`not_using_design_support_library`](https://github.com/Sottti/Material-Design-Nav-Drawer/tree/not_using_design_support_library) | Older/manual drawer implementation without `NavigationView`. |
 
 ## ⚙️ Tech Stack
