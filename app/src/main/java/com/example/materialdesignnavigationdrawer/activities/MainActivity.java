@@ -124,22 +124,15 @@ public class MainActivity extends AppCompatActivity {
 
   private void showImageFragment(final int imageCode) {
     final Bundle bundle = getImageFragmentBundle(imageCode);
-    replaceFragmentWithDelay(bundle);
+    replaceFragment(bundle);
   }
 
-  /**
-   * We start the transaction with delay to avoid junk while closing the drawer
-   */
-  private void replaceFragmentWithDelay(@NonNull final Bundle bundle) {
-    new Handler().postDelayed(new Runnable() {
-      @Override
-      public void run() {
-        getSupportFragmentManager()
-            .beginTransaction()
-            .replace(R.id.main_activity_content_frame, ImageFragment.newInstance(bundle))
-            .commit();
-      }
-    }, sDELAY_MILLIS);
+  private void replaceFragment(@NonNull final Bundle bundle) {
+    // Enqueue while this activity is active, before a rotation can save its state.
+    getSupportFragmentManager()
+        .beginTransaction()
+        .replace(R.id.main_activity_content_frame, ImageFragment.newInstance(bundle))
+        .commit();
   }
 
   @NonNull
